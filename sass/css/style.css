@@ -24,7 +24,7 @@ div { background: black; }
 #content #Home .main-image h1 { color: white; text-align: center; position: relative; top: 350px; }
 #content #About .about { margin-bottom: 2em; margin-top: 2em; }
 #content #About .about .profile-pic { border-radius: 5px; border-radius: 5px; }
-#content #About .about .profile-pic img { max-width: 97%; padding: 3%; border-radius: 5px; /* A percentage that, when doubled and added to the above, makes 100%. */ background: white /* Color of the faux border. */ }
+#content #About .about .profile-pic img { max-width: 99%; padding: 1%; border-radius: 5px; /* A percentage that, when doubled and added to the above, makes 100%. */ background: white /* Color of the faux border. */ }
 #content #About .about .about-me { text-align: left; }
 #content #Work .example { background: url("/media/phidev-footer.svg") no-repeat; background-size: 200px; height: 200px; background-color: white; border-radius: 5px; margin-bottom: 2em; }
 #content #Work .example.google { background: url("/media/google-search.png") no-repeat; background-size: 60px; background-color: white; }
@@ -32,7 +32,7 @@ div { background: black; }
 #content #Blog .fixed-height-blog { margin-top: 2em; margin-bottom: 2em; height: 650px; border: solid; border-radius: 5px; border-width: 1.5px; border-color: rgba(50, 50, 50, 0.5); overflow-y: scroll; }
 #content #Resume .resume h4 { text-align: center; }
 
-.title { text-align: center; background-color: white; color: black; }
+.title { text-align: center; background-color: black; color: white; }
 
 .normal-padding { padding-top: 1px; padding-bottom: 1px; border-radius: 5px; }
 .normal-padding h3 { position: relative; top: -5px; }
