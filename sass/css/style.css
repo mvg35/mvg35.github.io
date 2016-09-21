@@ -12,7 +12,7 @@ div { background: black; }
 #header .navbar .navbar-header, #header .navbar-default .navbar-header { padding-top: 2em; }
 #header .navbar .navbar-header .navbar-toggle, #header .navbar-default .navbar-header .navbar-toggle { background-image: none; border-width: 1px; border-style: solid; border-color: gray; border-radius: 4px; position: relative; right: 20px; top: -10px; }
 #header .navbar .navbar-header .navbar-toggle .sr-only, #header .navbar-default .navbar-header .navbar-toggle .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
-#header .navbar .navbar-header .navbar-brand, #header .navbar-default .navbar-header .navbar-brand { position: relative; top: -12px; background: url("/media/brand-logo.jpg") top left no-repeat; background-size: 100%; color: transparent; margin-left: 2em; z-index: 100; }
+#header .navbar .navbar-header .navbar-brand, #header .navbar-default .navbar-header .navbar-brand { position: relative; top: -8px; background: url("/media/brand-logo.png") top left no-repeat; background-size: 100%; color: transparent; margin-left: 2em; z-index: 100; }
 #header .navbar .navbar-collapse, #header .navbar-default .navbar-collapse { position: relative; padding-top: 2em; }
 #header .navbar .navbar-collapse ul, #header .navbar-default .navbar-collapse ul { position: relative; list-style-type: none; float: right; }
 #header .navbar .navbar-collapse ul li, #header .navbar-default .navbar-collapse ul li { padding-top: .7em; padding-bottom: .7em; border-right: solid; border-width: 1.5px; padding-right: 1em; padding-left: 1em; }
@@ -47,13 +47,13 @@ div { background: black; }
 #footer .row .top-button a h5 { text-align: center; }
 
 @media screen and (min-width: 768px) { /*--iPad--*/
-  #header .navbar .navbar-header .navbar-brand, #header .navbar-default .navbar-header .navbar-brand { top: 6px; left: -10px; }
+  #header .navbar .navbar-header .navbar-brand, #header .navbar-default .navbar-header .navbar-brand { top: 14px; left: -10px; }
   #header .navbar .navbar-collapse ul, #header .navbar-default .navbar-collapse ul { top: -30px; }
   #header .navbar .navbar-collapse ul li, #header .navbar-default .navbar-collapse ul li { display: inline; }
   #footer .row .group_social ul { padding: 0; }
   #footer .row h5 { padding-top: 5px; } }
 @media screen and (min-width: 800px) { /*--Monitor--*/
-  #header .navbar .navbar-header .navbar-brand, #header .navbar-default .navbar-header .navbar-brand { top: -13px; left: 0; }
+  #header .navbar .navbar-header .navbar-brand, #header .navbar-default .navbar-header .navbar-brand { left: 0; top: -9px; }
   #header .navbar .navbar-collapse ul, #header .navbar-default .navbar-collapse ul { top: 0; }
   #header .navbar .navbar-collapse ul li, #header .navbar-default .navbar-collapse ul li { display: inline; } }
 
