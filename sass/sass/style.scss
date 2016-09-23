@@ -212,7 +212,7 @@ div{
 						top:2px;
 						
 						&.subliminal {
-							background: url("/media/blog/subliminal-book.jpg") center top no-repeat;
+							background: url("/media/blog/subliminal-book.jpg") center no-repeat;
 							background-size: cover;
 						}
 
@@ -245,14 +245,14 @@ div{
 						h5{	
 							text-align: center;
 							position:relative;
-							top:-120px;
+							top:-150px;
 							color:white;
 							text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
 						}
 						h5:hover{
 							text-decoration: none;
 						}
-						h5:targer{
+						h5:target{
 							text-decoration: none;
 						}
 					}

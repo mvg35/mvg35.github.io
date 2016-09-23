@@ -35,15 +35,15 @@ div { background: black; }
 #content #Blog .fixed-height-blog { margin-top: 2em; margin-bottom: 2em; height: 650px; border: solid; border-radius: 5px; border-width: 1.5px; border-color: rgba(50, 50, 50, 0.5); overflow-y: scroll; }
 #content #Blog .fixed-height-blog a .blog-example { background-size: 200px; height: 180px; border: solid; border-width: 1px; background-color: black; border-radius: 5px; }
 #content #Blog .fixed-height-blog a .blog-example .picture { position: relative; height: 174px; top: 2px; }
-#content #Blog .fixed-height-blog a .blog-example .picture.subliminal { background: url("/media/blog/subliminal-book.jpg") center top no-repeat; background-size: cover; }
+#content #Blog .fixed-height-blog a .blog-example .picture.subliminal { background: url("/media/blog/subliminal-book.jpg") center no-repeat; background-size: cover; }
 #content #Blog .fixed-height-blog a .blog-example .picture.xolos { background: url("/media/blog/xolos.jpg") center no-repeat; background-size: cover; }
 #content #Blog .fixed-height-blog a .blog-example .picture.aviation { background: url("/media/blog/tlsp.jpg") center no-repeat; background-size: cover; }
 #content #Blog .fixed-height-blog a .blog-example .picture.slim { background: url("/media/blog/slim.png") center no-repeat; background-size: cover; }
 #content #Blog .fixed-height-blog a .blog-example .picture.latino-usa { background: url("/media/blog/latino-usa.jpg") center no-repeat; background-size: cover; }
 #content #Blog .fixed-height-blog a .blog-example .info { background: transparent; }
-#content #Blog .fixed-height-blog a .blog-example .info h5 { text-align: center; position: relative; top: -120px; color: white; text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black; }
+#content #Blog .fixed-height-blog a .blog-example .info h5 { text-align: center; position: relative; top: -150px; color: white; text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black; }
 #content #Blog .fixed-height-blog a .blog-example .info h5:hover { text-decoration: none; }
-#content #Blog .fixed-height-blog a .blog-example .info h5:targer { text-decoration: none; }
+#content #Blog .fixed-height-blog a .blog-example .info h5:target { text-decoration: none; }
 #content #Blog .fixed-height-blog a:hover, #content #Blog .fixed-height-blog a:target { text-decoration: none; }
 #content #Resume .resume h4 { text-align: center; }
 
