@@ -67,7 +67,9 @@ div{
 				color: transparent;
 				margin-left: 2em;
 				z-index: 100
+
 			}
+
 		} 
 		.navbar-collapse {
 			position:relative;
@@ -143,23 +145,42 @@ div{
 
 	#Work{
 		.example {
-			background: url("/media/phidev-footer.svg") no-repeat;
-			background-size: 200px;;
-			height: 200px;
+			background: url("/media/phidev-footer.svg") center top no-repeat;
+			background-size: 200px;
+			background-position-y:9px;
+			height: 220px;
 			background-color:white;
 			border-radius: 5px;
 			margin-bottom:2em;
 
 			&.google{
-				background: url("/media/google-search.png") no-repeat;
+				background: url("/media/google-search.png") center top no-repeat;
 				background-size: 60px;
+				background-position-y:5px;
 				background-color:white;
 			}
 
 			&.research{
-				background: url("/media/ap-lab.jpg") no-repeat;
+				background: url("/media/ap-lab.jpg") center top no-repeat;
 				background-size: 80px;
+				background-position-y:15px;
 				background-color:white;
+			}
+
+			.description{
+				position:relative;
+				top:70px;
+				p{
+					padding-top:5px;
+					color:black;
+					text-align: center;
+				}
+				ul{
+					text-align: center;
+					list-style-type: none;
+					li{
+					}
+				}
 			}
 		}
 	}
@@ -174,6 +195,68 @@ div{
 			border-width:1.5px;
 			border-color: rgba(50, 50, 50, .5);
 			overflow-y:scroll;
+
+
+			a{
+				.blog-example{
+					background-size: 200px;
+					height: 180px;
+					border:solid;
+					border-width:1px;
+					background-color: black;
+					border-radius: 5px;
+					.picture {
+						position:relative;
+						height: 174px;
+						top:2px;
+						
+						&.xolos {
+							background: url("/media/blog/xolos.jpg") center no-repeat;
+							background-size: cover;
+							
+						}
+
+						&.aviation {
+							background: url("/media/blog/tlsp.jpg")  center no-repeat;
+							background-size: cover;
+						}
+
+
+						&.slim {
+							background: url("/media/blog/slim.png")  center no-repeat;
+							background-size: cover;
+						}
+
+						&.latino-usa{
+							background: url("/media/blog/latino-usa.jpg")  center no-repeat;
+							background-size: cover;
+						}
+					}
+
+					.info{
+						background: transparent;
+
+						h5{	
+							text-align: center;
+							position:relative;
+							top:-120px;
+							color:white;
+							text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+						}
+						h5:hover{
+							text-decoration: none;
+						}
+					}
+				}
+				.blog-example:hover{
+					.picture {
+						opacity: .5;
+					}
+					h5{
+						color: gray;
+					}
+				}
+			}
 		}
 	}
 
@@ -288,6 +371,27 @@ div{
 		}
 	}
 
+	#content {
+		#Blog {
+			.fixed-height-blog{
+				
+				a{
+					.blog-example{
+						.picture {
+						}
+
+						.info{
+							h5{	
+								text-align: left;
+								top:10;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
 	#footer{
 		.row{
 			.group_social{
@@ -326,5 +430,7 @@ div{
 			}
 		}
 	}
+
+
 }
 
