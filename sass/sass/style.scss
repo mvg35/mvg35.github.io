@@ -113,7 +113,7 @@ div{
 			min-height: 700px;
 			background: url("/media/space.jpg") bottom right no-repeat;
 			background-size: cover;
-			box-shadow: inset 2px 800px 20px 10px  rgba(0,0,0,.5);
+			box-shadow: inset 200px 0px 100px 70px  rgba(0,0,0,.5);
 			h1{
 				color:white;
 				text-align:center;
@@ -138,7 +138,7 @@ div{
 				border-radius: 5px;
 			}
 			.about-me{
-				text-align: left;
+				text-align: center;
 			}
 		}
 	}
@@ -169,15 +169,16 @@ div{
 
 			.description{
 				position:relative;
-				top:70px;
+				top:65px;
 				p{
-					padding-top:5px;
+					padding-top:2px;
 					color:black;
 					text-align: center;
 				}
 				ul{
 					text-align: center;
 					list-style-type: none;
+					padding:0;
 					li{
 					}
 				}
@@ -210,6 +211,11 @@ div{
 						height: 174px;
 						top:2px;
 						
+						&.subliminal {
+							background: url("/media/blog/subliminal-book.jpg") center top no-repeat;
+							background-size: cover;
+						}
+
 						&.xolos {
 							background: url("/media/blog/xolos.jpg") center no-repeat;
 							background-size: cover;
@@ -241,21 +247,21 @@ div{
 							position:relative;
 							top:-120px;
 							color:white;
-							text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+							text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
 						}
 						h5:hover{
 							text-decoration: none;
 						}
+						h5:targer{
+							text-decoration: none;
+						}
 					}
 				}
-				.blog-example:hover{
-					.picture {
-						opacity: .5;
-					}
-					h5{
-						color: gray;
-					}
-				}
+
+			}
+			a:hover, a:target {
+				text-decoration: none;
+
 			}
 		}
 	}
@@ -343,6 +349,17 @@ div{
 				}
 			}
 		}
+
+		.translate{
+			a{
+				display:center;
+				align:center;
+				img{
+					
+					padding-top:1em;
+				}
+			}	
+		}
 	}
 }
 
@@ -372,6 +389,16 @@ div{
 	}
 
 	#content {
+
+		#About {
+			.about{
+				.about-me{
+					text-align: left;
+				}
+			}
+		}
+
+
 		#Blog {
 			.fixed-height-blog{
 				
@@ -385,6 +412,14 @@ div{
 								text-align: left;
 								top:10;
 							}
+						}
+					}
+					.blog-example:hover{
+						.picture {
+							opacity: .5;
+						}
+						h5{
+							color: gray;
 						}
 					}
 				}

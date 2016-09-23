@@ -20,30 +20,31 @@ div { background: black; }
 #header .navbar .navbar-collapse ul li:hover a, #header .navbar-default .navbar-collapse ul li:hover a { text-decoration: none; color: gray; }
 #header .navbar .navbar-collapse ul li:hover img, #header .navbar-default .navbar-collapse ul li:hover img { opacity: .5; }
 
-#content #Home .main-image { min-height: 700px; background: url("/media/space.jpg") bottom right no-repeat; background-size: cover; box-shadow: inset 2px 800px 20px 10px rgba(0, 0, 0, 0.5); }
+#content #Home .main-image { min-height: 700px; background: url("/media/space.jpg") bottom right no-repeat; background-size: cover; box-shadow: inset 200px 0px 100px 70px rgba(0, 0, 0, 0.5); }
 #content #Home .main-image h1 { color: white; text-align: center; position: relative; top: 350px; }
 #content #About .about { margin-bottom: 2em; margin-top: 2em; }
 #content #About .about .profile-pic { border-radius: 5px; border-radius: 5px; }
 #content #About .about .profile-pic img { max-width: 99%; padding: 1%; border-radius: 5px; /* A percentage that, when doubled and added to the above, makes 100%. */ background: white /* Color of the faux border. */ }
-#content #About .about .about-me { text-align: left; }
+#content #About .about .about-me { text-align: center; }
 #content #Work .example { background: url("/media/phidev-footer.svg") center top no-repeat; background-size: 200px; background-position-y: 9px; height: 220px; background-color: white; border-radius: 5px; margin-bottom: 2em; }
 #content #Work .example.google { background: url("/media/google-search.png") center top no-repeat; background-size: 60px; background-position-y: 5px; background-color: white; }
 #content #Work .example.research { background: url("/media/ap-lab.jpg") center top no-repeat; background-size: 80px; background-position-y: 15px; background-color: white; }
-#content #Work .example .description { position: relative; top: 70px; }
-#content #Work .example .description p { padding-top: 5px; color: black; text-align: center; }
-#content #Work .example .description ul { text-align: center; list-style-type: none; }
+#content #Work .example .description { position: relative; top: 65px; }
+#content #Work .example .description p { padding-top: 2px; color: black; text-align: center; }
+#content #Work .example .description ul { text-align: center; list-style-type: none; padding: 0; }
 #content #Blog .fixed-height-blog { margin-top: 2em; margin-bottom: 2em; height: 650px; border: solid; border-radius: 5px; border-width: 1.5px; border-color: rgba(50, 50, 50, 0.5); overflow-y: scroll; }
 #content #Blog .fixed-height-blog a .blog-example { background-size: 200px; height: 180px; border: solid; border-width: 1px; background-color: black; border-radius: 5px; }
 #content #Blog .fixed-height-blog a .blog-example .picture { position: relative; height: 174px; top: 2px; }
+#content #Blog .fixed-height-blog a .blog-example .picture.subliminal { background: url("/media/blog/subliminal-book.jpg") center top no-repeat; background-size: cover; }
 #content #Blog .fixed-height-blog a .blog-example .picture.xolos { background: url("/media/blog/xolos.jpg") center no-repeat; background-size: cover; }
 #content #Blog .fixed-height-blog a .blog-example .picture.aviation { background: url("/media/blog/tlsp.jpg") center no-repeat; background-size: cover; }
 #content #Blog .fixed-height-blog a .blog-example .picture.slim { background: url("/media/blog/slim.png") center no-repeat; background-size: cover; }
 #content #Blog .fixed-height-blog a .blog-example .picture.latino-usa { background: url("/media/blog/latino-usa.jpg") center no-repeat; background-size: cover; }
 #content #Blog .fixed-height-blog a .blog-example .info { background: transparent; }
-#content #Blog .fixed-height-blog a .blog-example .info h5 { text-align: center; position: relative; top: -120px; color: white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; }
+#content #Blog .fixed-height-blog a .blog-example .info h5 { text-align: center; position: relative; top: -120px; color: white; text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black; }
 #content #Blog .fixed-height-blog a .blog-example .info h5:hover { text-decoration: none; }
-#content #Blog .fixed-height-blog a .blog-example:hover .picture { opacity: .5; }
-#content #Blog .fixed-height-blog a .blog-example:hover h5 { color: gray; }
+#content #Blog .fixed-height-blog a .blog-example .info h5:targer { text-decoration: none; }
+#content #Blog .fixed-height-blog a:hover, #content #Blog .fixed-height-blog a:target { text-decoration: none; }
 #content #Resume .resume h4 { text-align: center; }
 
 .title { text-align: center; background-color: black; color: white; }
@@ -59,12 +60,17 @@ div { background: black; }
 #footer .row .group_social ul .social-image:hover { opacity: 1; }
 #footer .row .group_social ul .social-image:hover img { text-decoration: none; -webkit-transform: scale(1.3, 1.3); -ms-transform: scale(1.3, 1.3); transform: scale(1.3, 1.3); opacity: 1; z-index: 100; }
 #footer .row .top-button a h5 { text-align: center; }
+#footer .row .translate a { display: center; align: center; }
+#footer .row .translate a img { padding-top: 1em; }
 
 @media screen and (min-width: 768px) { /*--iPad--*/
   #header .navbar .navbar-header .navbar-brand, #header .navbar-default .navbar-header .navbar-brand { top: 14px; left: -10px; }
   #header .navbar .navbar-collapse ul, #header .navbar-default .navbar-collapse ul { top: -30px; }
   #header .navbar .navbar-collapse ul li, #header .navbar-default .navbar-collapse ul li { display: inline; }
+  #content #About .about .about-me { text-align: left; }
   #content #Blog .fixed-height-blog a .blog-example .info h5 { text-align: left; top: 10; }
+  #content #Blog .fixed-height-blog a .blog-example:hover .picture { opacity: .5; }
+  #content #Blog .fixed-height-blog a .blog-example:hover h5 { color: gray; }
   #footer .row .group_social ul { padding: 0; }
   #footer .row h5 { padding-top: 5px; } }
 @media screen and (min-width: 800px) { /*--Monitor--*/
