@@ -151,6 +151,9 @@ div{
 			height: 220px;
 			background-color:white;
 			border-radius: 5px;
+			border: solid;
+			border-width:3px;
+			border-color: rgba(50, 50, 50, .2);
 			margin-bottom:2em;
 
 			&.google{
@@ -164,6 +167,13 @@ div{
 				background: url("/media/ap-lab.jpg") center top no-repeat;
 				background-size: 80px;
 				background-position-y:15px;
+				background-color:white;
+			}
+
+			&.free-lance {
+				background: url("/media/logo-circular.png") center top no-repeat;
+				background-size: 55px;
+				background-position-y:8px;
 				background-color:white;
 			}
 
@@ -193,8 +203,8 @@ div{
 			height: 650px;
 			border: solid;
 			border-radius: 5px;
-			border-width:1.5px;
-			border-color: rgba(50, 50, 50, .5);
+			border-width:3px;
+			border-color: rgba(50, 50, 50, .2);
 			overflow-y:scroll;
 
 
@@ -211,6 +221,11 @@ div{
 						height: 174px;
 						top:2px;
 						
+						&.emotient {
+							background: url("/media/blog/computer-vision.jpg") center no-repeat;
+							background-size: cover;
+						}
+
 						&.subliminal {
 							background: url("/media/blog/subliminal-book.jpg") center no-repeat;
 							background-size: cover;
