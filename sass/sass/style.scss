@@ -12,7 +12,7 @@ html, body {
 		margin: none;
 	}
 	p{
-		color: white;
+		color: black;
 	}
 }
 
@@ -125,6 +125,11 @@ div{
 
 	#About{
 		.about{
+			background-color:white;
+			border-radius: 5px;
+			border: solid;
+			border-width:3px;
+			border-color: rgba(50, 50, 50, .2);
 			margin-bottom: 2em;
 			margin-top: 2em;
 			.profile-pic{
@@ -135,7 +140,6 @@ div{
 				    border-radius:5px; /* A percentage that, when doubled and added to the above, makes 100%. */
 				    background:white; /* Color of the faux border. */
 				}
-				border-radius: 5px;
 			}
 			.about-me{
 				text-align: center;
@@ -148,13 +152,14 @@ div{
 			background: url("/media/phidev-footer.svg") center top no-repeat;
 			background-size: 200px;
 			background-position-y:9px;
-			height: 220px;
+			min-height: 260px;
 			background-color:white;
 			border-radius: 5px;
 			border: solid;
 			border-width:3px;
 			border-color: rgba(50, 50, 50, .2);
 			margin-bottom:2em;
+			position:relative;
 
 			&.google{
 				background: url("/media/google-search.png") center top no-repeat;
@@ -413,6 +418,11 @@ div{
 			}
 		}
 
+	#Work{
+		.example {
+			min-height: 240px;
+			}
+		}	
 
 		#Blog {
 			.fixed-height-blog{

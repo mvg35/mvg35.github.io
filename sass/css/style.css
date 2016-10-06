@@ -1,7 +1,7 @@
 html, body { font-family: 'Ubuntu', sans-serif !important; width: 100%; overflow-x: hidden; align: center; background: black; }
 html h4, body h4 { color: white; }
 html h3, body h3 { margin: none; }
-html p, body p { color: white; }
+html p, body p { color: black; }
 
 div { background: black; }
 
@@ -22,11 +22,11 @@ div { background: black; }
 
 #content #Home .main-image { min-height: 700px; background: url("/media/space.jpg") bottom right no-repeat; background-size: cover; box-shadow: inset 200px 0px 100px 70px rgba(0, 0, 0, 0.5); }
 #content #Home .main-image h1 { color: white; text-align: center; position: relative; top: 350px; }
-#content #About .about { margin-bottom: 2em; margin-top: 2em; }
-#content #About .about .profile-pic { border-radius: 5px; border-radius: 5px; }
+#content #About .about { background-color: white; border-radius: 5px; border: solid; border-width: 3px; border-color: rgba(50, 50, 50, 0.2); margin-bottom: 2em; margin-top: 2em; }
+#content #About .about .profile-pic { border-radius: 5px; }
 #content #About .about .profile-pic img { max-width: 99%; padding: 1%; border-radius: 5px; /* A percentage that, when doubled and added to the above, makes 100%. */ background: white /* Color of the faux border. */ }
 #content #About .about .about-me { text-align: center; }
-#content #Work .example { background: url("/media/phidev-footer.svg") center top no-repeat; background-size: 200px; background-position-y: 9px; height: 220px; background-color: white; border-radius: 5px; border: solid; border-width: 3px; border-color: rgba(50, 50, 50, 0.2); margin-bottom: 2em; }
+#content #Work .example { background: url("/media/phidev-footer.svg") center top no-repeat; background-size: 200px; background-position-y: 9px; min-height: 260px; background-color: white; border-radius: 5px; border: solid; border-width: 3px; border-color: rgba(50, 50, 50, 0.2); margin-bottom: 2em; position: relative; }
 #content #Work .example.google { background: url("/media/google-search.png") center top no-repeat; background-size: 60px; background-position-y: 5px; background-color: white; }
 #content #Work .example.research { background: url("/media/ap-lab.jpg") center top no-repeat; background-size: 80px; background-position-y: 15px; background-color: white; }
 #content #Work .example.free-lance { background: url("/media/logo-circular.png") center top no-repeat; background-size: 55px; background-position-y: 8px; background-color: white; }
@@ -70,6 +70,7 @@ div { background: black; }
   #header .navbar .navbar-collapse ul, #header .navbar-default .navbar-collapse ul { top: -30px; }
   #header .navbar .navbar-collapse ul li, #header .navbar-default .navbar-collapse ul li { display: inline; }
   #content #About .about .about-me { text-align: left; }
+  #content #Work .example { min-height: 240px; }
   #content #Blog .fixed-height-blog a .blog-example .info h5 { text-align: left; top: 10; }
   #content #Blog .fixed-height-blog a .blog-example:hover .picture { opacity: .5; }
   #content #Blog .fixed-height-blog a .blog-example:hover h5 { color: gray; }
