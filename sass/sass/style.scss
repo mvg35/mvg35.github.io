@@ -39,14 +39,15 @@ div{
 #header {
 	position:relative;
 	top:40px;
-	.navbar, .navbar-default {
 
+	.navbar, .navbar-default {
 		border-radius:5px;
 	    position: absolute;
 	    background: white !important;
 	    z-index: 100;
 	    width: 100%;
 		.navbar-header {
+
 			padding-top:2em;
 
 			.navbar-toggle{
@@ -83,8 +84,10 @@ div{
 
 		} 
 		.navbar-collapse {
+
 			position:relative;
 			padding-top:2em;
+
 			ul {
 				position:relative;
 				list-style-type: none;
@@ -117,6 +120,8 @@ div{
 	}
 }
 
+
+
 #content {
 
 	#Home {
@@ -125,10 +130,11 @@ div{
 			background: url("/media/space.jpg") bottom right no-repeat;
 			background-size: cover;
 			box-shadow: inset 200px 0px 100px 70px  rgba(0,0,0,.5);
+			position:fixed;
 			h1{
 				color:white;
 				text-align:center;
-				position:relative;
+				position:fixed;
 				top: 350px;
 			}
 		}
