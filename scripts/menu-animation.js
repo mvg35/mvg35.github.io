@@ -4,9 +4,9 @@ $(function(){
 
         $(window).scroll(function(){
 
-                if( $(window).scrollTop() > stickyHeaderTop ) {
+                if( $(window).scrollTop() > (stickyHeaderTop) ) { //-3?
 
-                    $('.navbar').css({position: 'fixed', top: '0px'});
+                    $('.navbar').css({position: 'fixed', top: '0px'}); //3?
                         
                 } else if( $(window).scrollTop() < stickyHeaderTop )  {
                         $('.navbar').css({position: 'none', top: stickyHeaderTop-$(window).scrollTop()});
