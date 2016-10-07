@@ -7,6 +7,8 @@ div { background: black; }
 
 .wb { background: white !important; }
 
+.whiteBGsetup { margin-top: 2em; margin-bottom: 2em; border: solid; border-radius: 5px; border-width: 3px; border-color: rgba(50, 50, 50, 0.2); background: white; }
+
 #header { position: relative; top: 40px; }
 #header .navbar, #header .navbar-default { border-radius: 5px; position: absolute; background: white !important; z-index: 100; width: 100%; }
 #header .navbar .navbar-header, #header .navbar-default .navbar-header { padding-top: 2em; }
@@ -53,6 +55,11 @@ div { background: black; }
 
 .normal-padding { padding-top: 1px; padding-bottom: 1px; border-radius: 5px; }
 .normal-padding h3 { position: relative; top: -5px; }
+
+.project-images { padding-top: 1em; padding-bottom: 1em; }
+
+#content-google-search-operator #Home .main-image { position: relative; top: 40px; min-height: 700px; background: url("/media/views/gso/coding.jpg") bottom right no-repeat; background-size: cover; }
+#content-google-search-operator #Home .main-image h1 { color: white; text-align: center; position: relative; top: 350px; }
 
 #footer { position: relative; border-radius: 5px; }
 #footer .row .contact-info a h5 { text-align: center; }

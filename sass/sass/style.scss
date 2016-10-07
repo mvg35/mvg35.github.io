@@ -24,6 +24,17 @@ div{
 	background:white !important;
 }
 
+.whiteBGsetup {
+	margin-top: 2em;
+	margin-bottom: 2em;
+	
+	border: solid;
+	border-radius: 5px;
+	border-width:3px;
+	border-color: rgba(50, 50, 50, .2);
+	background:white;
+}
+
 
 #header {
 	position:relative;
@@ -296,7 +307,6 @@ div{
 }
 
 
-
 .title {
 
 	text-align: center;
@@ -311,6 +321,29 @@ div{
 	h3 {
 		position: relative;
 		top: -5px;
+	}
+}
+
+.project-images {
+	padding-top:1em;
+	padding-bottom:1em;
+}
+
+#content-google-search-operator {
+	#Home {
+		.main-image {
+			position:relative;
+			top:40px;
+			min-height: 700px;
+			background: url("/media/views/gso/coding.jpg") bottom right no-repeat;
+			background-size: cover;
+			h1{
+				color:white;
+				text-align:center;
+				position:relative;
+				top: 350px;
+			}
+		}
 	}
 }
 
@@ -382,6 +415,8 @@ div{
 		}
 	}
 }
+
+
 
 
 @media screen and (min-width: 768px) { /*--iPad--*/
