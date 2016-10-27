@@ -194,7 +194,7 @@ div {
   border-right: none;
   border-left: none;
   border-width: 3px;
-  border-color: rgba(50, 50, 50, 0.2);
+  border-color: white;
   overflow-y: scroll; }
   #content #Blog .fixed-height-blog a .blog-example {
     background-size: 200px;
