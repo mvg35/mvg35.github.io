@@ -205,14 +205,12 @@ div{
 			    /* Set a specific height */
 
 			    /* Create the parallax scrolling effect */
-			    background-attachment: fixed;
 			    background-size:cover;
-			    background-position: top;
+			    background-position: center;
 
 
 			    &.google{
 					background: url("/media/app-development.jpg") center no-repeat;
-					background-attachment: fixed;
 				    background-size: cover;
 				    img {
 				    	width: 80px;
@@ -223,9 +221,9 @@ div{
 				}
 				&.research{
 					background: url("/media/researchlab.JPG");
-					background-attachment: fixed;
-				    background-size: 900px;
-				    background-position: center;
+				    background-size: cover;
+				    background-position: left;
+				    background-position-x:-55px;
 				    img {
 				    	width: 75px;
 				    	height: 32.5px;
@@ -234,9 +232,8 @@ div{
 				    }
 				}
 				&.free-lance {
-					background: url("/media/freelance.png")right;
-					background-attachment: fixed;
-				    background-size: 300px;
+					background: url("/media/freelance.png")center;
+				    background-size: 200px;
 				    img {
 				    	width: 100px;
 				    	height:100px;
@@ -545,6 +542,8 @@ div{
 			}
 
 			.sqr-img {
+				background-attachment: fixed;
+				background-size:cover;
 				img{
 					position: relative;
 					top: 50%;
@@ -556,6 +555,7 @@ div{
 				}
 
 			    &.google{
+			    	background-attachment: fixed;
 				    img {
 				    	width: 150px;
 				    	height: 150px;
@@ -564,6 +564,7 @@ div{
 				    }
 				}
 				&.research{
+					background-attachment: fixed;	
 				    img {
 				    	width: 150px;
 				    	height: 65px;
@@ -572,6 +573,7 @@ div{
 				    }
 				}
 				&.free-lance {
+					background-attachment: fixed;
 				    img {
 				    	width: 150px;
 				    	height:150px;
