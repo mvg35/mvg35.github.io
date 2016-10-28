@@ -1,4 +1,3 @@
-
 html, body {
 	font-family: 'Ubuntu', sans-serif !important;
 	width:100%;
@@ -223,11 +222,10 @@ div{
 				    }
 				}
 				&.research{
-					background: url("/media/eye-tracking.jpeg")no-repeat;
+					background: url("/media/researchlab.JPG");
 					background-attachment: fixed;
-				    background-size: 500px;
-				    background-position: bottom left;
-				    background-position-y:150px;
+				    background-size: 900px;
+				    background-position: center;
 				    img {
 				    	width: 75px;
 				    	height: 32.5px;
@@ -407,7 +405,10 @@ div{
 			top:40px;
 			min-height: 700px;
 			background: url("/media/views/gso/coding.jpg") bottom right no-repeat;
-			background-size: cover;
+			
+			background-attachment: fixed;
+		    background-size:cover;
+		    background-position: top;
 			h1{
 				color:white;
 				text-align:center;
@@ -554,19 +555,7 @@ div{
 				 	margin-left: -200px; /* Half the width */
 				}
 
-				background: url("/media/web-development.jpg")no-repeat;
-			    /* Set a specific height */
-
-			    /* Create the parallax scrolling effect */
-			    background-attachment: fixed;
-			    background-size:cover;
-			    background-position: top;
-
-
 			    &.google{
-					background: url("/media/app-development.jpg") center no-repeat;
-					background-attachment: fixed;
-				    background-size: cover;
 				    img {
 				    	width: 150px;
 				    	height: 150px;
@@ -575,11 +564,6 @@ div{
 				    }
 				}
 				&.research{
-					background: url("/media/eye-tracking.jpeg")no-repeat;
-					background-attachment: fixed;
-				    background-size: 750px;
-				    background-position: bottom left;
-				    background-position-y:100px;
 				    img {
 				    	width: 150px;
 				    	height: 65px;
@@ -588,9 +572,6 @@ div{
 				    }
 				}
 				&.free-lance {
-					background: url("/media/freelance.png")center;
-					background-attachment: fixed;
-				    background-size: 300px;
 				    img {
 				    	width: 150px;
 				    	height:150px;

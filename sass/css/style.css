@@ -148,11 +148,10 @@ div {
         /* Half the height */
         margin-left: -40px; }
     #content #Work .square-pair .sqr-img.research {
-      background: url("/media/eye-tracking.jpeg") no-repeat;
+      background: url("/media/researchlab.JPG");
       background-attachment: fixed;
-      background-size: 500px;
-      background-position: bottom left;
-      background-position-y: 150px; }
+      background-size: 900px;
+      background-position: center; }
       #content #Work .square-pair .sqr-img.research img {
         width: 75px;
         height: 32.5px;
@@ -263,7 +262,9 @@ div {
   top: 40px;
   min-height: 700px;
   background: url("/media/views/gso/coding.jpg") bottom right no-repeat;
-  background-size: cover; }
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: top; }
   #content-google-search-operator #Home .main-image h1 {
     color: white;
     text-align: center;
@@ -333,55 +334,34 @@ div {
       margin-left: 50%;
       height: 350px;
       background: black; }
-    #content #Work .square-pair .sqr-img {
-      background: url("/media/web-development.jpg") no-repeat;
-      /* Set a specific height */
-      /* Create the parallax scrolling effect */
-      background-attachment: fixed;
-      background-size: cover;
-      background-position: top; }
-      #content #Work .square-pair .sqr-img img {
-        position: relative;
-        top: 50%;
-        left: 50%;
-        width: 400px;
-        height: 400px;
-        margin-top: -200px;
-        /* Half the height */
-        margin-left: -200px;
-        /* Half the width */ }
-      #content #Work .square-pair .sqr-img.google {
-        background: url("/media/app-development.jpg") center no-repeat;
-        background-attachment: fixed;
-        background-size: cover; }
-        #content #Work .square-pair .sqr-img.google img {
-          width: 150px;
-          height: 150px;
-          margin-top: -75px;
-          /* Half the height */
-          margin-left: -75px; }
-      #content #Work .square-pair .sqr-img.research {
-        background: url("/media/eye-tracking.jpeg") no-repeat;
-        background-attachment: fixed;
-        background-size: 750px;
-        background-position: bottom left;
-        background-position-y: 100px; }
-        #content #Work .square-pair .sqr-img.research img {
-          width: 150px;
-          height: 65px;
-          margin-top: -35px;
-          /* Half the height */
-          margin-left: -75px; }
-      #content #Work .square-pair .sqr-img.free-lance {
-        background: url("/media/freelance.png") center;
-        background-attachment: fixed;
-        background-size: 300px; }
-        #content #Work .square-pair .sqr-img.free-lance img {
-          width: 150px;
-          height: 150px;
-          margin-top: -75px;
-          /* Half the height */
-          margin-left: -75px; }
+    #content #Work .square-pair .sqr-img img {
+      position: relative;
+      top: 50%;
+      left: 50%;
+      width: 400px;
+      height: 400px;
+      margin-top: -200px;
+      /* Half the height */
+      margin-left: -200px;
+      /* Half the width */ }
+    #content #Work .square-pair .sqr-img.google img {
+      width: 150px;
+      height: 150px;
+      margin-top: -75px;
+      /* Half the height */
+      margin-left: -75px; }
+    #content #Work .square-pair .sqr-img.research img {
+      width: 150px;
+      height: 65px;
+      margin-top: -35px;
+      /* Half the height */
+      margin-left: -75px; }
+    #content #Work .square-pair .sqr-img.free-lance img {
+      width: 150px;
+      height: 150px;
+      margin-top: -75px;
+      /* Half the height */
+      margin-left: -75px; }
     #content #Work .square-pair .sqr-txt {
       padding-top: 5em; }
       #content #Work .square-pair .sqr-txt h2 {
