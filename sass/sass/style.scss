@@ -303,6 +303,11 @@ div{
 						height: 174px;
 						top:2px;
 						
+						&.leonardo {
+							background: url("/media/blog/before-the-flood.jpg") center no-repeat;
+							background-size: cover;
+						}
+
 						&.emotient {
 							background: url("/media/blog/computer-vision.jpg") center no-repeat;
 							background-size: cover;
