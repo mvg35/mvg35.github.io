@@ -220,10 +220,10 @@ div{
 				    }
 				}
 				&.research{
-					background: url("/media/researchlab.JPG");
-				    background-size: cover;
+					background: url("/media/new_research_lab.JPG");
+				    background-size: 50%;
 				    background-position: left;
-				    background-position-x:-55px;
+				    
 				    img {
 				    	width: 75px;
 				    	height: 32.5px;
@@ -303,6 +303,11 @@ div{
 						height: 174px;
 						top:2px;
 						
+						&.tlou {
+							background: url("/media/blog/the_last_of_us.jpg") center no-repeat;
+							background-size: cover;
+						}
+
 						&.leonardo {
 							background: url("/media/blog/before-the-flood.jpg") center no-repeat;
 							background-size: cover;

@@ -146,10 +146,9 @@ div {
         /* Half the height */
         margin-left: -40px; }
     #content #Work .square-pair .sqr-img.research {
-      background: url("/media/researchlab.JPG");
-      background-size: cover;
-      background-position: left;
-      background-position-x: -55px; }
+      background: url("/media/new_research_lab.JPG");
+      background-size: 50%;
+      background-position: left; }
       #content #Work .square-pair .sqr-img.research img {
         width: 75px;
         height: 32.5px;
@@ -202,6 +201,9 @@ div {
       position: relative;
       height: 174px;
       top: 2px; }
+      #content #Blog .fixed-height-blog a .blog-example .picture.tlou {
+        background: url("/media/blog/the_last_of_us.jpg") center no-repeat;
+        background-size: cover; }
       #content #Blog .fixed-height-blog a .blog-example .picture.leonardo {
         background: url("/media/blog/before-the-flood.jpg") center no-repeat;
         background-size: cover; }
