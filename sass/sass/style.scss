@@ -17,6 +17,10 @@ html, body {
 
 div{
 	background:black;
+}
+
+#WebGLAnimation {
+	z-index:-1;
 }	
 
 .wb {
@@ -241,6 +245,10 @@ div{
 				 		margin-left: -50px; 
 				    }
 				}
+
+				&.WebGL {
+
+				}
 			}
 
 			.sqr-txt {
@@ -270,7 +278,7 @@ div{
 					}
 				}
 
-				&.google, &.research, &.free-lance{
+				&.google, &.research, &.free-lance, &.WebGL{
 					padding-top: 8em;
 				}
 			}

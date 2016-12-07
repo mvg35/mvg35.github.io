@@ -14,6 +14,9 @@ html, body {
 div {
   background: black; }
 
+#WebGLAnimation {
+  z-index: -1; }
+
 .wb {
   background: white !important; }
 
@@ -179,7 +182,7 @@ div {
         text-decoration: none; }
       #content #Work .square-pair .sqr-txt ul li:target a {
         text-decoration: none; }
-    #content #Work .square-pair .sqr-txt.google, #content #Work .square-pair .sqr-txt.research, #content #Work .square-pair .sqr-txt.free-lance {
+    #content #Work .square-pair .sqr-txt.google, #content #Work .square-pair .sqr-txt.research, #content #Work .square-pair .sqr-txt.free-lance, #content #Work .square-pair .sqr-txt.WebGL {
       padding-top: 8em; }
 #content #Blog .fixed-height-blog {
   margin-top: 2em;
