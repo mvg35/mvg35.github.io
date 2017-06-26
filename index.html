@@ -31,6 +31,9 @@
  		<script type="text/javascript" src="/scripts/RequestAnimationFrame.js?ver=4.6.1"></script>
         <script type="text/javascript" src="/scripts/menu-animation.js?ver=4.6.1"></script>
         <script type="text/javascript" src="/scripts/three.js?ver=4.6.1"></script>
+        <script type="text/javascript" src="/scripts/shine.min.js"></script>
+        <script type="text/javascript" src="/scripts/main.js"></script>
+        
         
         <script>
         	(function(i,s,o,g,r,a,m){
@@ -44,6 +47,17 @@
 			ga('send', 'pageview');
 		</script>
 
+		<script>
+
+
+			var shine = new Shine(document.getElementById($('welcome')));
+
+			window.addEventListener('mousemove', function(event) {
+			  shine.light.position.x = event.clientX;
+			  shine.light.position.y = event.clientY;
+			  shine.draw();
+			}, false);
+		</script>
 
  		<script>
 
@@ -140,6 +154,8 @@
 			
 		</script>
 
+
+
     </head>
 
     <body onLoad="onLoad();">
@@ -158,10 +174,9 @@
 
     			<div class="navbar-collapse navbar-ex1-collapse collapse wb" style="height: auto;">
     				<ul>
-    					<li><a href="#Home">HOME</a></li>
+    					<li><a href="#Home" class="active">HOME</a></li>
     					<li><a href="#About">ABOUT</a></li>
     					<li><a href="#Work">WORK</a></li>
-    					<li><a href="#Blog">BLOG</a></li>
     					<li><a href="#Resume">RESUME</a></li>
     					<li><a href="http://www.instagram.com/miguel_24v/" 
     						 target="_blank">
@@ -194,7 +209,7 @@
     	<div id="content">
     		<div id="Home">
        			<div class="main-image normal-padding">
-    				<h1>Welcome_</h1>
+    				<h1 id="welcome" >Welcome_</h1>
     			</div>
     		</div>
 
@@ -223,13 +238,23 @@
 				    <div class="leftHalf sqr-img phidev">
 				    	<a href="http://www.phidevinc.com"><img src="/media/phidev-footer.svg"></a>
 				    </div>
-				    <div class="rightHalf sqr-txt phidev">
+				    <div class="rightHalf sqr-txt phidev" style="padding-top: 1.5em;">
 				    	<h2>
 				    		Web Development
 				    	</h2>
 				    	<ul>
+				    		<li>
+	    						<a href="http://www.steadfastplanning.com" target="_blank">steadfastplanning.com</a>
+	    					</li>
+	    					
+	    					<li>
+	    						<a href="http://www.epmeals.com" target="_blank">epmeals.com</a>
+	    					</li>
 	    					<li>
 	    						<a href="http://audisatt.com" target="_blank">audisatt.com</a>
+	    					</li>
+	    					<li>
+	    						<a href="http://www.fitfoodep.com" target="_blank">fitfoodep.com</a>
 	    					</li>
 	    					<li>
 	    						<a href="http://www.elpasohauling.com" target="_blank">elpasohauling.com</a>
@@ -237,6 +262,18 @@
 	    					<li>
 	    						<a href="http://www.anson11.com" target="_blank">anson11.com</a>
 	   						</li>
+	   						<li>
+	    						<a href="http://www.texasmedicalcareplans.com" target="_blank">texasmedicalcareplans.com</a>
+	    					</li>
+	    					<li>
+	    						<a href="http://www.crm.texasmedicalcareplans.com" target="_blank">crm.texasmedicalcareplans.com</a>
+	    					</li>
+	    					<li>
+	    						<a href="https://app.ninskers.com" target="_blank">ninskers.com</a>
+	    					</li>
+	    					<li>
+	   							<a href="http://aplab.bu.edu/" target="_blank">aplab.bu.edu</a>
+    						</li>
 	   						<li>
 	   							<a href="http://iv-infusions.com" target="_blank">iv-infusions.com</a>
     						</li>	   							    				
@@ -314,139 +351,6 @@
 
 	    	<div class="clearfix"></div>
 
-	    	<div id="Blog" style=" padding-bottom:7em;">
-	    		<div class="title normal-padding col-sm-2 col-sm-offset-5"><h1>Blog_</h1></div>
-
-	    			<div class="fixed-height-blog col-sm-6 col-sm-offset-3">
-
-	    				<a href="https://www.youtube.com/watch?v=W2Wnvvj33Wo" target="_blank">
-							<div class="blog-example col-sm-12" style="margin-top:1.5em;">
-								<div class="picture col-sm-4 tlou">
-					
-								</div>
-
-								<div class="info col-sm-8">
-									<h5>
-										If you haven't played The Last of Us...
-									</h5>
-									<div class="clearfix"></div>
-								</div>
-							</div>
-						</a>
-
-
-	    				<a href="https://youtu.be/90CkXVF-Q8M" target="_blank">
-							<div class="blog-example col-sm-12" style="margin-top:1.5em;">
-								<div class="picture col-sm-4 leonardo">
-					
-								</div>
-
-								<div class="info col-sm-8">
-									<h5>
-										New document directed by Leonardo Dicaprio emphasizing the treats caused by our uncontrolled uses of unrenewable energy sources. Great watch.
-									</h5>
-									<div class="clearfix"></div>
-								</div>
-							</div>
-						</a>
-
-	    				<a href="http://dealmakershub.com/apple-acquires-emotient-artificial-intelligence-and-facial-recognition-startup/" target="_blank">
-							<div class="blog-example col-sm-12" style="margin-top:1.5em;">
-								<div class="picture col-sm-4 emotient">
-					
-								</div>
-
-								<div class="info col-sm-8">
-									<h5>
-										Attended a talk where a cofounder of Emotient showed us how new technologies are being created like Inteligent Tutoring System which uses neural networks, face recognition, and Markov Decision Proces in order to tutor a user. Interesting.
-									</h5>
-									<div class="clearfix"></div>
-								</div>
-							</div>
-						</a>
-
-	    				<a href="https://www.youtube.com/watch?v=NJ-IfVHJH58" target="_blank">
-							<div class="blog-example col-sm-12" style="margin-top:1.5em;">
-								<div class="picture col-sm-4 subliminal">
-					
-								</div>
-
-								<div class="info col-sm-8">
-									<h5>
-										Subliminal - How Your Unconscious Mind Rules Your Behavior by Leonard Mlodinow. Great book I read over the summer, discusses the depths of our day to day subconscious processes. Link to a video of the author going more into detail.
-									</h5>
-									<div class="clearfix"></div>
-								</div>
-							</div>
-						</a>
-
-		    			<a href="http://www.mediotiempo.com/liga/futbol/ligamx/posiciones" target="_blank">
-							<div class="blog-example col-sm-12" style="margin-top:1.5em;">
-								<div class="picture col-sm-4 xolos">
-					
-								</div>
-
-								<div class="info col-sm-8">
-									<h5>
-										Mexican Football Standings - Tijuana is first place. Woo.
-									</h5>
-									<div class="clearfix"></div>
-								</div>
-							</div>
-						</a>
-
-						<a href="https://www.youtube.com/watch?v=Fd1Xc6-6VVg" target="_blank">
-							<div class="blog-example col-sm-12" style="margin-top:1.5em;">
-								<div class="picture col-sm-4 aviation">
-					
-								</div>
-
-								<div class="info col-sm-8">
-									<h5>
-										Test Post - Aviation by The Last Shadow Puppets, nice music video and song.
-									</h5>
-									<div class="clearfix"></div>
-								</div>
-							</div>
-						</a>
-
-						<a href="http://www.slimframework.com/" target="_blank">
-							<div class="blog-example col-sm-12" style="margin-top:1.5em;">
-								<div class="picture col-sm-4 slim">
-					
-								</div>
-
-								<div class="info col-sm-8">
-									<h5>
-										Currently trying a new framework for future APIs - Slim is supposed to be a good and lightweight frame that is rising to popularity.
-									</h5>
-									<div class="clearfix"></div>
-								</div>
-							</div>
-						</a>
-
-						<a href="https://www.amazon.com/dp/B005LAA900/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1" target="_blank">
-							<div class="blog-example col-sm-12" style="margin-top:1.5em;">
-								<div class="picture col-sm-4 latino-usa">
-					
-								</div>
-
-								<div class="info col-sm-8">
-									<h5>
-										Had to read this comic/book for a class. Totally recommend it as it is a fun and concise analysis of Latino population and history in the USA.
-									</h5>
-									<div class="clearfix"></div>
-								</div>
-							</div>
-						</a>
-
-					</div>
-
-					<div class="clearfix"></div>
-	    	</div>
-
-	    	<div class="clearfix"></div>
-
 	    	<div id="Resume" style=" padding-bottom:7em;">
 	    		<div class="title normal-padding col-sm-2 col-sm-offset-5"><h1>Resume_</h1></div>
 	    		<div class="clearfix"></div>
@@ -500,7 +404,7 @@
     			</div>
 
     			<div class="top-button wb col-sm-4">
-    				<a href="#Home"><h5>Back to top</h5></a>
+    				<a href="#Home" id="back-to-top"><h5>Back to top</h5></a>
     			</div>
 			</div>
     	</div>

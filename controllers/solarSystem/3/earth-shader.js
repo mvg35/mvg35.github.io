@@ -114,10 +114,10 @@ Earth.prototype.update = function()
 	Sim.Object.prototype.update.call(this);
 }
 
-Earth.ROTATION_Y = 0.001;
+Earth.ROTATION_Y = 0.1;
 Earth.TILT = 0.41;
 Earth.CLOUDS_SCALE = 1.005;
-Earth.CLOUDS_ROTATION_Y = Earth.ROTATION_Y * 0.95;
+Earth.CLOUDS_ROTATION_Y = Earth.ROTATION_Y * 0.10;
 
 // Custom Sun class
 Sun = function()

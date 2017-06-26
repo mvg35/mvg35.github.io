@@ -96,6 +96,7 @@ div {
     text-align: center;
     position: relative;
     top: 350px; }
+
 #content #About .about p {
   text-align: center;
   color: white;
@@ -111,6 +112,7 @@ div {
       color: red; }
     #content #About .about p a:hover #verde {
       color: green; }
+
 #content #Work .square-pair {
   width: 100%;
   height: 350px;
@@ -184,6 +186,7 @@ div {
         text-decoration: none; }
     #content #Work .square-pair .sqr-txt.google, #content #Work .square-pair .sqr-txt.research, #content #Work .square-pair .sqr-txt.free-lance, #content #Work .square-pair .sqr-txt.WebGL {
       padding-top: 8em; }
+
 #content #Blog .fixed-height-blog {
   margin-top: 2em;
   height: 650px;
@@ -241,6 +244,7 @@ div {
         text-decoration: none; }
   #content #Blog .fixed-height-blog a:hover, #content #Blog .fixed-height-blog a:target {
     text-decoration: none; }
+
 #content #Resume .resume h4 {
   text-align: center; }
 
@@ -323,7 +327,6 @@ div {
     top: -30px; }
     #header .navbar .navbar-collapse ul li, #header .navbar-default .navbar-collapse ul li {
       display: inline; }
-
   #content #About .about .about-me {
     text-align: left; }
   #content #Work .square-pair {
@@ -399,11 +402,11 @@ div {
     opacity: .5; }
   #content #Blog .fixed-height-blog a .blog-example:hover h5 {
     color: gray; }
-
   #footer .row .group_social ul {
     padding: 0; }
   #footer .row h5 {
     padding-top: 5px; } }
+
 @media screen and (min-width: 800px) {
   /*--Monitor--*/
   #header .navbar .navbar-header .navbar-brand, #header .navbar-default .navbar-header .navbar-brand {
@@ -413,5 +416,3 @@ div {
     top: 0; }
     #header .navbar .navbar-collapse ul li, #header .navbar-default .navbar-collapse ul li {
       display: inline; } }
-
-/*# sourceMappingURL=style.css.map */

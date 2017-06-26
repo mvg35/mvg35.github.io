@@ -182,11 +182,11 @@ Earth.prototype.update = function()
 }
 
 
-Earth.ROTATION_Y = 0.003;
+Earth.ROTATION_Y = 0.000003;
 Earth.TILT = 0.41;
 Earth.RADIUS = 6371;
 Earth.CLOUDS_SCALE = 1.005;
-Earth.CLOUDS_ROTATION_FACTOR = 0.95;
+Earth.CLOUDS_ROTATION_FACTOR = 0.20;
 	
 // Custom Moon class
 Moon = function()
