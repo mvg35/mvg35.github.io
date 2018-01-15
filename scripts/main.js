@@ -1,10 +1,14 @@
 $(document).ready(function() {
 
-	underscore1 = $('#span1');
-	underscore2 = $('#span2');
-	underscore3 = $('#span3');
+	var underscore1 = $('#span1');
+	var underscore2 = $('#span2');
+	var underscore3 = $('#span3');
+	var underscore4 = $('#span4');
+	var underscore5 = $('#span5');
+	var underscore6 = $('#span6');
+	var underscore7 = $('#span7');
 
-	flag = 0;
+	var flag = 0;
 
 	setInterval(function() {
 
@@ -12,7 +16,11 @@ $(document).ready(function() {
 
 			underscore1.css("visibility", "hidden");
 			underscore2.css("visibility", "hidden");
-			underscore3.css("visibility", "hidden");
+            underscore3.css("visibility", "hidden");
+            underscore4.css("visibility", "hidden");
+            underscore5.css("visibility", "hidden");
+            underscore6.css("visibility", "hidden");
+            underscore7.css("visibility", "hidden");
 
 			flag = 1;
 			
@@ -20,13 +28,44 @@ $(document).ready(function() {
 
 			underscore1.css("visibility", "visible");
 			underscore2.css("visibility", "visible");
-			underscore3.css("visibility", "visible");
+            underscore3.css("visibility", "visible");
+            underscore4.css("visibility", "visible");
+            underscore5.css("visibility", "visible");
+            underscore6.css("visibility", "visible");
+            underscore7.css("visibility", "visible");
 
 			flag = 0;
 		}
 
 	}, 800);
-	
+
+
+	$('.overlay').click(function(){
+
+		$(this).addClass('hidden');
+        $('div[class^="pop-up"]').addClass('hidden');
+        $('.main-div').css('position', 'relative');
+
+	});
+
+    $('a[class^="pop-up-close"]').click(function(event) {
+
+        event.preventDefault();
+        $('.overlay').addClass('hidden');
+        $('div[class^="pop-up"]').addClass('hidden');
+        $('.main-div').css('position', 'relative');
+
+	});
+
+    $('a[class^="pop-up-open"]').click(function(event) {
+
+        event.preventDefault();
+        $($(this).data("target")).removeClass('hidden');
+        $('.overlay').removeClass('hidden');
+        $('.main-div').css('overflow-y', 'hidden');
+
+    });
+
 
 	$('nav a[href^="#"]').on('click', function (e) {
 		e.preventDefault();
@@ -34,13 +73,15 @@ $(document).ready(function() {
  
 		$('nav a').each(function () {
 			$(this).removeClass('active');
-		})
+		});
 		$(this).addClass('active');
  
 		var target = this.hash;
-		$target = $(target);
+
+		var new_target = $(target);
+
 		$('html, body').stop().animate({
-			'scrollTop': $target.offset().top - 90
+			'scrollTop': new_target.offset().top - 90
 		}, 500, 'swing', function () {
 			window.location.hash = target;
 			//$(document).on("scroll", onScroll);
@@ -53,35 +94,17 @@ $(document).ready(function() {
  
 		$('nav a').each(function () {
 			$(this).removeClass('active');
-		})
+		});
 
 		$('nav a[href^="Home"]').addClass('active');
  
 		var target = this.hash;
-		$target = $(target);
+		var new_target = $(target);
 		$('html, body').stop().animate({
-			'scrollTop': $target.offset().top - 90
+			'scrollTop': new_target.offset().top - 90
 		}, 500, 'swing', function () {
 			window.location.hash = target;
 			//$(document).on("scroll", onScroll);
 		});
 	});
-
-	function onScroll(event){
-
-		var scrollPosition = $(document).scrollTop();
-
-		$('nav a').each(function () {
-			var currentLink = $(this);
-			var refElement = $(currentLink.attr("href"));
-			console.log(refElement)
-			if (refElement.position().top <= scrollPosition && refElement.position().top + refElement.height() > scrollPosition) {
-				$('nav ul li a').removeClass("active");
-				currentLink.addClass("active");
-			}
-			else{
-				currentLink.removeClass("active");
-			}
-		});
-	};
 });
