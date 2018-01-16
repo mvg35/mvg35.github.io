@@ -2,7 +2,8 @@ html, body {
   font-family: 'Ubuntu', sans-serif !important;
   width: 100%;
   overflow-x: hidden;
-  background: black; }
+  background: black;
+  color: #828282 !important; }
   html h4, body h4 {
     color: white; }
   html h3, body h3 {
