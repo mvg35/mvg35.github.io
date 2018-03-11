@@ -82,7 +82,7 @@ $(document).ready(function() {
 
 		$('html, body').stop().animate({
 			'scrollTop': new_target.offset().top - 90
-		}, 500, 'swing', function () {
+		}, 700, 'swing', function () {
 			window.location.hash = target;
 			//$(document).on("scroll", onScroll);
 		});
