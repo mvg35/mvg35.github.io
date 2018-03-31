@@ -40,6 +40,30 @@ $(document).ready(function() {
 	}, 800);
 
 
+	var menuHeight = $('nav').height();
+
+	$('nav a[href^="#"]').on('click', function (e) {
+
+      e.preventDefault();
+      $(document).off("scroll");
+      
+      $('a').each(function () {
+          $(this).removeClass('active');
+      });
+      $(this).addClass('active');
+    
+      var target = this.hash,
+          menu = target;
+        $target = $(target);
+      $('html, body').stop().animate({
+          'scrollTop': $target.offset().top - menuHeight - 15
+      }, 500, 'swing', function () {
+          //window.location.hash = target;
+          //action();
+      });
+  });
+
+
 	$('.overlay').click(function(){
 
 		$(this).addClass('hidden');
@@ -67,44 +91,5 @@ $(document).ready(function() {
     });
 
 
-	$('nav a[href^="#"]').on('click', function (e) {
-		e.preventDefault();
-		$(document).off("scroll");
- 
-		$('nav a').each(function () {
-			$(this).removeClass('active');
-		});
-		$(this).addClass('active');
- 
-		var target = this.hash;
-
-		var new_target = $(target);
-
-		$('html, body').stop().animate({
-			'scrollTop': new_target.offset().top - 90
-		}, 700, 'swing', function () {
-			window.location.hash = target;
-			//$(document).on("scroll", onScroll);
-		});
-	});
-
-	$('#back-to-top').on('click', function (e) {
-		e.preventDefault();
-		$(document).off("scroll");
- 
-		$('nav a').each(function () {
-			$(this).removeClass('active');
-		});
-
-		$('nav a[href^="Home"]').addClass('active');
- 
-		var target = this.hash;
-		var new_target = $(target);
-		$('html, body').stop().animate({
-			'scrollTop': new_target.offset().top - 90
-		}, 500, 'swing', function () {
-			window.location.hash = target;
-			//$(document).on("scroll", onScroll);
-		});
-	});
+	
 });
