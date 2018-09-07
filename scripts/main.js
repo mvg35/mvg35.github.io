@@ -23,7 +23,7 @@ $(document).ready(function() {
             underscore7.css("visibility", "hidden");
 
 			flag = 1;
-			
+
 		} else {
 
 			underscore1.css("visibility", "visible");
@@ -44,25 +44,21 @@ $(document).ready(function() {
 
 	$('nav a[href^="#"]').on('click', function (e) {
 
-      e.preventDefault();
-      $(document).off("scroll");
-      
-      $('a').each(function () {
-          $(this).removeClass('active');
-      });
-      $(this).addClass('active');
-    
-      var target = this.hash,
-          menu = target;
-        $target = $(target);
-      $('html, body').stop().animate({
-          'scrollTop': $target.offset().top - menuHeight - 15
-      }, 500, 'swing', function () {
-          //window.location.hash = target;
-          //action();
-      });
-  });
+	      e.preventDefault();
+	      $(document).off("scroll");
+	      $('a').each(function () {
+	          $(this).removeClass('active');
+	      });
+	      $(this).addClass('active');
 
+	      var target = this.hash;
+		  var $target = $(target);
+		  console.log($target);
+	      $('html, body').stop().animate({'scrollTop': $target.offset().top - menuHeight - 5}, 500, 'swing', function () {
+	          //window.location.hash = target;
+	          //action();
+	      });
+	  });
 
 	$('.overlay').click(function(){
 
@@ -89,7 +85,4 @@ $(document).ready(function() {
         $('.main-div').css('overflow-y', 'hidden');
 
     });
-
-
-	
 });
