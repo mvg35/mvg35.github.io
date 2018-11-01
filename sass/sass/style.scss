@@ -225,11 +225,27 @@ ul {
 				text-decoration: none;
 				cursor:pointer;
 
-				&:hover {
+				&.web {
+					opacity: 1;
 
-					h2 {
+					img {
+						border-radius: 8px;
+						margin-bottom: 5px;
+					}
+
+					p {
+						text-align: left;
 						color: gray !important;
 					}
+
+					div {
+						padding: 0 5px !important;
+					}
+				}
+
+				&:hover {
+
+					opacity: .8;
 				}
 
 				&:target {

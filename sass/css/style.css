@@ -140,8 +140,18 @@ html, body {
     .section .subsection .container a {
       text-decoration: none;
       cursor: pointer; }
-      .section .subsection .container a:hover h2 {
-        color: gray !important; }
+      .section .subsection .container a.web {
+        opacity: 1; }
+        .section .subsection .container a.web img {
+          border-radius: 8px;
+          margin-bottom: 5px; }
+        .section .subsection .container a.web p {
+          text-align: left;
+          color: gray !important; }
+        .section .subsection .container a.web div {
+          padding: 0 5px !important; }
+      .section .subsection .container a:hover {
+        opacity: .8; }
       .section .subsection .container a:target {
         text-decoration: none; }
         .section .subsection .container a:target h2 {
