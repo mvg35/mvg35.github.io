@@ -27,7 +27,7 @@ a, p, span {
     color: green;
 }
 
-#living:hover #maroon {
+#living:hover .maroon {
     color: rgb(150, 2, 2);
 }
 
@@ -103,6 +103,7 @@ section {
 }
 
 #vr {
+    padding: 1.5em;
     background: #101820;
     border-left: .5px solid white;
     padding: 0;
