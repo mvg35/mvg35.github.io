@@ -178,6 +178,7 @@ $(document).ready(function() {
 
     $('.link-box').click((event) => {
         if($('#go-to-site').attr('visible') === true) {
+            resetCamera();
             window.open(event.target.id, '_blank');
         } else {
             resetCamera();
