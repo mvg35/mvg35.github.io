@@ -7,26 +7,38 @@
         <meta property="og:url" content="http://mvg35.github.io" />
 	    <meta property="og:type" content="website" />
 	    <meta property="og:title" content="mvg35" />
-	    <meta property="og:description" content="Just a student trying to learn." />
+	    <meta property="og:description" content="Welcome (:" />
 	    <meta property="og:image:secure_url" content="http://mvg35.github.io/media/logo-600.png" />
 	    <meta property="og:image:height" content= "600" />
 	    <meta property="og:image:width" content= "600" />
 
+        <link rel="stylesheet" type="text/css" href="/sass/css/new_style.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link rel="icon" type="image/png" href="/media/favicon.ico">
-		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="/sass/css/style.css">
-        <!--jquery-->
-	    <script src="https://code.jquery.com/jquery-3.3.1.js"
-		  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-		  crossorigin="anonymous">
-		</script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="/scripts/main.js"></script>
- 		<script type="text/javascript" src="/scripts/RequestAnimationFrame.js?ver=4.6.1"></script>
-        <script type="text/javascript" src="/scripts/menu-animation.js?ver=4.6.1"></script>
-        <script type="text/javascript" src="/scripts/three.min.js"></script>
-		<script type="text/javascript" src="https://use.fontawesome.com/730e03c3db.js"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+        <script type="text/javascript" src="/scripts/new_main.js"></script>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="/scripts/play-all-model-animations.js"></script>
+
+        <script>
+            AFRAME.registerComponent('modify-materials', {
+              init: function () {
+                // Wait for model to load.
+                this.el.addEventListener('model-loaded', () => {
+                    // Grab the mesh / scene.
+                    const obj = this.el.getObject3D('mesh');
+                    // Go over the submeshes and modify materials we want.
+                    obj.traverse(node => {
+                        if (node.name.indexOf('ship') !== -1) {
+                            node.material.color.set('red');
+                        }
+                    });
+                });
+              }
+            });
+        </script>
 
         <script>
         	(function(i,s,o,g,r,a,m){
@@ -37,570 +49,143 @@
 			 	 }
 			)(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 			ga('create', 'UA-85349508-1', 'auto');
-			ga('send', 'pageview');
-
+            ga('send', 'pageview');
 		</script>
-
     </head>
     <body>
-		<div class="main-div">
-			<div id="header">
-				<nav class = "navbar navbar-default" role ="navigation">
-					<div class="navbar-header wb">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-							<span class="sr-only">Toogle Navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand" href="/">mvg35</a>
-					</div>
+        <div class="main">
+        <div class="container left-container active">
+            <a id="mvg35">
+                <img height="60" width="auto" src="./media/logo-c-w.png">
+            </a>
+            <div id="bio">
+                <p>Hello, my name is Miguel Valdez.<br>
+                    I am 24 years old.<br>
+                    <a id="from" href="https://en.wikipedia.org/wiki/Ciudad_Ju%C3%A1rez" target="_blank">Grew up in<br/>
+                        <span id="green">Cd. Juarez,</span> Chihuahua,
+                        <span id="red"> Mexico.</span>
+                    </a><br/>
+                    <a id="living" href="http://www.appliedmaterials.com/" target="_blank">
+                        Living in <span id="maroon">Phoenix, Arizona.</span>
+                    </a><br/>
+                    <a id="working" href="http://www.appliedmaterials.com/" target="_blank">
+                        Working at 
+                        <span id="blue">Applied Materials</span> as a Software Engineer!
+                    </a>
 
-					<div class="navbar-collapse navbar-ex1-collapse collapse wb" style="height: auto;">
-						<ul>
-							<li><a href="#home" class="active">HOME</a></li>
-							<li><a href="#about">ABOUT</a></li>
-							<li><a href="#work">PROJECTS</a></li>
-							<li><a href="#resume">RESUME</a></li>
-							<li><a href="#contact">CONTACT</a></li>
-						</ul>
-					</div>
-				</nav>
-				<div id="stickyalias"></div>
+                </p>
+                <a style="font-size: .65em; color:#ccc;" href="/old">Go to Old Website</a>
+                <div class="footer-social-links">
+                    <a href="https://linkedin.com/in/miguelvaldez35/" title="LinkedIn+" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://instagram.com/miguel_24v" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+                    <a href="https://facebook.com/miguel.valdez.526" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mvg35@bu.com" title="Dribbble" target="_blank"><i class="fa fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container right-container">
+            <section>
+                <a href="#vr" class="btn smoothScroll">Hi! Click here ></a>
+            </section>
 
-			</div>
+            <section id="vr">
+                <a-scene embedded>
+                    <!-- (Left, Right) - (Up Down) - (Front Back) -->
+                    <a-assets>
+                        <a-asset-item id="cityModel" src="https://cdn.aframe.io/test-models/models/glTF-2.0/virtualcity/VC.gltf"></a-asset-item>
+                    </a-assets>
+                    <a-entity gltf-model="#cityModel" play-all-model-animations modify-materials></a-entity>
+                    
+                    <a-box id="website-render" position="0 1.2 -1.6" depth=".1" height="1" width="1.7" src="./media/football.png"></a-box>
+                    
+                    <a-entity
+                        class="description-text"
+                        position="0 0.5 -1.6"
+                        depth=".3"
+                        rotation="-40 0 0"
+                        scale="1.2 1.2 1.2"
+                        text="
+                            color: white;
+                            value: You'll more than likely find me browsing Youtube, playing football or hanging out with friends;
+                            align: center;
+                        "
+                    ></a-entity>
 
-			<div id="content">
-				<div id="home" class="section" style="padding:0 !important;">
-					<div class="main-image normal-padding" id="world-block">
-						<div class="container">
-							<h1 id="Welcome" >>Welcome<span id="span1">_</span></h1>
-						</div>
-					</div>
-				</div>
+                    <a-curvedimage
+                        src="./media/panorama.jpg"
+                        height="3" radius="4" theta-length="130" position="-.982 1.5 -.375"
+                        rotation="0 -20 0" scale="">
+                    </a-curvedimage>
+                    <a-entity
+                        class="description-text"
+                        position="2.23 .184 -.217"
+                        depth=".3"
+                        text="color: white; value: Sounds very cliche but I really enjoy traveling; align: center;"
+                        rotation="-40 -90 0"
+                        scale="1.4 1.4 1.4"
+                        visible="true"
+                    ></a-entity>
 
-				<div id="about" class="section">
-					<div class="about container">
-						<p>Hello, my name is Miguel Valdez.<br>
-							23 years old.<br>
-							<a href="https://en.wikipedia.org/wiki/Ciudad_Ju%C3%A1rez" target="_blank">Grew up in
-								<span id="rojo">Ciudad Juarez,</span> Chihuahua,
-								<span id="verde"> Mexico.</span></a><br/>
-							<a href="http://www.appliedmaterials.com/" target="_blank">Currently working as a Software Engineer at Applied Materials
-							</a>
-						</p>
-						<span>“I think it is possible for ordinary people<br/>to choose to be extraordinary.”<br> - E. Musk</span>
-					</div>
-				</div>
+                    <a-entity
+                        position="-.5 .2 2.5"
+                        depth=".3"
+                        text="color: white; value: Nuevo San Carlos, Sonora, Mexico; align: center;"
+                        rotation="-40 180 0"
+                        scale="1.4 1.4 1.4"
+                        visible="true"
+                    ></a-entity>
 
-				<div class="work-section section" id="work">
+                    <a-entity
+                        id="go-to-site"
+                        position="0 0.211 -1.5"
+                        depth=".3"
+                        text="color: white; value: Go to site >; align: center;"
+                        rotation="-40 0 0"
+                        scale="2 2 2"
+                        visible="false"
+                    >
+                    </a-entity>
 
-					<div class="subsection row">
-						<div class="container">
-							<a data-toggle="collapse" data-target="#collapsible-web-development"><h2>>Web &#38; App Development<span id="span3">_</span></h2></a>
-						</div>
-						<div class="collapsible-div collapse" id="collapsible-web-development">
-							<div class="container">
-								<div class="col-sm-12">
-									<span>Alongside different and great creative agencies like
-                                        <a href="https://phidevinc.com" target="_blank">Phidev</a>,
-                                        <a href="https://josencreative.com" target="_blank">Josen</a>,
-                                        <a href="https://aidan-james.com" target="_blank">Aidan-James</a>,
-                                        or personally I've been able to work on different projects like:
-                                    </span>
+                    <a-entity
+                        id="scroll-down"
+                        position="0 0.211 -1.5"
+                        depth=".3"
+                        text="color: white; value: Scroll Down; align: center;"
+                        rotation="-40 0 0"
+                        scale="2 2 2"
+                    >
+                    </a-entity>
 
-                                    <a class="web" target="_blank" href="http://ninskers.com">
-                                        <div class="col-sm-3">
-                                            <h4>ninskers.com</h4>
-                                            <img class="img-responsive" src="./media/ninskers.png">
-                                            <p>+ Web application, Supply Chain &#38; Logistics log and tracking.</p>
-                                        </div>
-                                    </a>
+                    <a-box
+                        class="link-box"
+                        width=".8" height=".006" depth=".3" position="0 .2 -1.55" rotation="40 0 0"
+                        material="color: #1a2937"
+                    >
+                    </a-box>
+                    
+                    <!-- <a-sky color="#101820"></a-sky> -->
+                    <a-entity id="camera" look-controls position="0 1 0" camera wasd-controls="acceleration:100">
+                        <a-cursor color ="#CCCCCC" cursor="fuse: true; fuseTimeout: 1500;">
+                        </a-cursor>
+                    </a-entity>
+                </a-scene>
+            </section>
+            
+            <section id="my-work">
+                <div>
+                    <p style="margin-top:10em;">I've been able to be part of the following projects:</p>
+                    <ul id="my-work-list">
+                    </ul>
+                    <p>and more...</p>
+                </div>
+            </section>
 
-                                    <a class="web" target="_blank" href="http://audisatt.com">
-                                        <div class="col-sm-3">
-                                            <h4>audisatt.com</h4>
-                                            <img class="img-responsive" src="./media/audisatt.png">
-                                            <p>+ Web application, automated audit system.</p>
-                                        </div>
-                                    </a>
-
-                                    <a class="web" target="_blank" href="http://texasmedicalcareplans.com">
-                                        <div class="col-sm-3">
-                                            <h4>texasmedicalcareplans.com</h4>
-                                            <img class="img-responsive" src="./media/tmcp.png">
-                                            <p>+ Web application, CRM.</p>
-                                        </div>
-                                    </a>
-
-                                    <a class="web" target="_blank" href="https://tacotote.com">
-                                        <div class="col-sm-3">
-                                            <h4>tacotote.com</h4>
-                                            <img class="img-responsive" src="./media/tacotote.png">
-                                        </div>
-                                    </a>
-                                    <div class="clearfix"></div>
-
-                                    <a class="web" target="_blank" href="http://anson11.com">
-                                        <div class="col-sm-3">
-                                            <h4>anson11.com</h4>
-                                            <img class="img-responsive" src="./media/anson11.png">
-                                        </div>
-                                    </a>
-
-                                    <a class="web" target="_blank" href="http://phidevinc.com">
-                                        <div class="col-sm-3">
-                                            <h4>phidevinc.com</h4>
-                                            <img class="img-responsive" src="./media/phidev.png">
-                                        </div>
-                                    </a>
-
-                                    <a class="web" target="_blank" href="https://dailyhumor.co">
-                                        <div class="col-sm-3">
-                                            <h4>dailyhumor.co</h4>
-                                            <img class="img-responsive" src="./media/daily.png">
-                                        </div>
-                                    </a>
-
-                                    <a class="web" target="_blank" href="https://esperanzahope.us/">
-                                        <div class="col-sm-3">
-                                            <h4>esperanzahope.us</h4>
-                                            <img class="img-responsive" src="./media/esperanza.png">
-                                        </div>
-                                    </a>
-
-
-                                    <div class="clearfix"></div>
-
-                                    <a class="web" target="_blank" href="https://funnyhoodvidz.com/">
-                                        <div class="col-sm-3">
-                                            <h4>funnyhoodvidz.com</h4>
-                                            <img class="img-responsive" src="./media/funny.png">
-                                        </div>
-                                    </a>
-
-                                    <a class="web" target="_blank" href="https://josen.io/largescaleprops/">
-                                        <div class="col-sm-3">
-                                            <h4>largescaleprops.com</h4>
-                                            <img class="img-responsive" src="./media/large.png">
-                                        </div>
-                                    </a>
-
-                                    <a class="web" target="_blank" href="http://eatardeo.com">
-                                        <div class="col-sm-3">
-                                            <h4>eatardeo.com</h4>
-                                            <img class="img-responsive" src="./media/ardeo.png">
-                                        </div>
-                                    </a>
-
-                                    <a class="web" target="_blank" href="http://truvizeplanning.com/">
-                                        <div class="col-sm-3">
-                                            <h4>truvizeplanning.com</h4>
-                                            <img class="img-responsive" src="./media/truvize.png">
-                                        </div>
-                                    </a>
-
-
-
-                                    <div class="clearfix"></div>
-
-                                    <a class="web" target="_blank" href="http://9capital.com">
-                                        <div class="col-sm-3">
-                                            <h4>9capital.com</h4>
-                                            <img class="img-responsive" src="./media/9capital.png">
-                                        </div>
-                                    </a>
-
-                                    <a class="web" target="_blank" href="http://iv-infusions.com">
-                                        <div class="col-sm-3">
-                                            <h4>ivinfusions.com</h4>
-                                            <img class="img-responsive" src="./media/iv.png">
-                                        </div>
-                                    </a>
-
-                                    <a class="web" target="_blank" href="http://brooklinepsych.com">
-                                        <div class="col-sm-3">
-                                            <h4>brooklinepsych.com</h4>
-                                            <img class="img-responsive" src="./media/brookline.png">
-                                        </div>
-                                    </a>
-
-                                    <a class="web" target="_blank" href="http://borntxraised.com">
-                                        <div class="col-sm-3">
-                                            <h4>borntxraised.com</h4>
-                                            <img class="img-responsive" src="./media/bnr.png">
-                                        </div>
-                                    </a>
-
-                                    <div class="clearfix"></div>
-
-                                    <a class="web" target="_blank" href="http://rginnovative.com">
-                                        <div class="col-sm-3">
-                                            <h4>rginnovative.com</h4>
-                                            <img class="img-responsive" src="./media/rginnovative.png">
-                                        </div>
-                                    </a>
-
-                                    <a class="web" target="_blank" href="http://rivastacoshop.com">
-                                        <div class="col-sm-3">
-                                            <h4>rivastacoshop.com</h4>
-                                            <img class="img-responsive" src="./media/rivas.png">
-                                        </div>
-                                    </a>
-
-                                    <a class="web" target="_blank" href="http://elpasohauling.com">
-                                        <div class="col-sm-3">
-                                            <h4>elpasohauling.com</h4>
-                                            <img class="img-responsive" src="./media/henry.png">
-                                        </div>
-                                    </a>
-
-                                    <a class="web" target="_blank" href="http://blushskin.com">
-                                        <div class="col-sm-3">
-                                            <h4>blushskin.com</h4>
-                                            <img class="img-responsive" src="./media/blush.png">
-                                        </div>
-                                    </a>
-
-
-                                    <div class="clearfix"></div>
-
-                                    <a class="web">
-                                        <div class="col-sm-3">
-                                            <h4>danielfm.net</h4>
-                                            <img class="img-responsive" src="./media/daniel.png">
-                                        </div>
-                                    </a>
-
-                                    <a class="web" target="_blank" href="http://extendedplay.jandkpresent.com/">
-                                        <div class="col-sm-3">
-                                            <h4>extendedplay.com</h4>
-                                            <img class="img-responsive" src="./media/extendedplay.png">
-                                        </div>
-                                    </a>
-
-                                    <a class="web" target="_blank" href="http://districtcoffee.co/">
-                                        <div class="col-sm-3">
-                                            <h4>districtcoffee.com</h4>
-                                            <img class="img-responsive" src="./media/districtcoffee.png">
-                                        </div>
-                                    </a>
-
-                                    <a class="web" target="_blank" href="http://furthertofly.net">
-                                        <div class="col-sm-3">
-                                            <h4>furthertofly.net</h4>
-                                            <img class="img-responsive" src="./media/further.png">
-                                        </div>
-                                    </a>
-
-                                    <div class="clearfix"></div>
-
-                                    <div class="row" style="margin-bottom:20px; margin-top:20px;">
-                                        <p style="color:white;" class="col-sm-12">Newest:<p>
-                                        <div class="col-sm-6">
-                                            <h4><a target="_blank" href="https://dashedapp.io/">dashEDapp.io</a></h4>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <h4><a class="web" target="_blank" href="https://thrivemusic.com/">thrivemusic.com</a></h4>
-                                        </div>
-                                    </div>
-                                    <!--<h4><a class="web row" target="_blank" href="http://bornandraisedeptx.com">bornandraisedeptx.com</a></h4>-->
-								</div>
-								<div class="clearfix"></div>
-							</div>
-						</div>
-
-					</div>
-
-					<div class="subsection row">
-						<div class="container">
-							<a data-toggle="collapse" data-target="#collapsible-swerve"><h2>>Swerve<span id="span4">_</span></h2></a>
-						</div>
-						<div class="collapsible-div collapse" id="collapsible-swerve">
-							<div class="container">
-								<div class="col-sm-6">
-									<span>
-									Swerve is my image sharer web application, but with a small twist.<br/>
-									Users upload their panoramic images in order to have
-									the images viewable in a VR environment. Preferably with a mobile device, although it can also be used on a computer.<br/>
-									</span>
-									<span>
-									Right now, panoramic images are the only allowed format, but the end goal is to give users the most immersive experience possible when trying to share their memories.<br/>
-									</span>
-									<span>
-									With Swerve I've been able to face challenges that have made me sweat.
-									Having to think about scalability, Swerve's application and databases are
-									being fully hosted and stored with AWS.<br/>
-									</span>
-									<span>
-									Currently, Swerve is under development but you can
-										<a target="_blank" href="/controllers/swerve">click here</a> for a small sample of the experience
-										- preferably using your mobile device or try refreshing a couple of times until the image loads :)
-									</span>
-								</div>
-								<div class="clearfix"></div>
-								<div class="col-sm-2" style="margin-top: 1em; margin-left:1em;">
-									<img class="img-responsive" src="/media/brand-square.png">
-								</div>
-							</div>
-						</div>
-					</div>
-
-
-					<div class="subsection row">
-						<div class="container">
-							<a data-toggle="collapse" data-target="#collapsible-projects"><h2>>Projects<span id="span5">_</span></h2></a>
-						</div>
-						<div class="collapsible-div collapse" id="collapsible-projects">
-							<div class="container">
-								<div class="col-sm-12">
-								<div class="web col-sm-3" style="margin-right: 1em;">
-
-									<h3>webGL</h3>
-									<span>I've been trying to learn the basics behind graphics, for these I've looked at
-										tutorials where core concepts where thought. I am interested in the applications
-                                        that can be achieved with graphics and more specifically the impact they can have
-                                        on the web. Try the following examples on a computer:</span>
-									<ul>
-										<li><a target="_blank" href="/controllers/gears">Gears</a></li>
-										<li><a target="_blank" href="/controllers/blocks">Blocks</a></li>
-										<li><a target="_blank" href="/controllers/puebla-experience.html">Puebla Experience</a></li>
-									</ul>
-								</div>
-								<div class="web col-sm-3" style="margin-right: 1em;">
-									<h3>Machine Learning</h3>
-									<span>I was able to take classes about Machine Learning and Artificial Intelligence.
-									It was interesting to learn about the new techniques being developed which makes ingenious uses
-									of data and today's technology.</span>
-									<ul>
-										<li><a href="#" data-target="#paper-scissors-rock-div" class="pop-up-open">Paper, Scissors, Rock OpenCV</a></li>
-										<li><a href="#" data-target="#structured-face-recognition" class="pop-up-open">Structured Face Recognition</a></li>
-									</ul>
-								</div>
-								<div class="web col-sm-3">
-									<h3>Miscellaneous</h3>
-									<span>From time to time, learning and getting exposed to different software systems
-                                        is good since you get to have first hand experience with the technology that is
-                                        leading other industries.</span>
-									<ul>
-										<li><a href="#" data-target="#google-search-div" class="pop-up-open">Google Search Operators App (iOS)</a></li>
-										<li><a href="#" data-target="#solar-panel-div" class="pop-up-open">Light Seeking Solar Panel (Arduino)</a></li>
-									</ul>
-								</div>
-							</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="subsection row">
-						<div class="container">
-							<a data-toggle="collapse" data-target="#collapsible-research"><h2>>Research Assistant<span id="span6">_</span></h2></a>
-						</div>
-						<div class="collapsible-div collapse" id="collapsible-research">
-							<div class="container">
-								<div class="col-sm-6">
-									<span>I was part of the Active Perception Lab at Boston University.<br/> In there I was
-										able to setup and code an experiment which consisted of a VR scene written in
-										the C language with openGL.<br/>
-									</span>
-									<span>
-										The subject's head was mounted with space-tracking equipment which helped us collect,
-										through our server, real-time data of the subject's microscopic head movements
-                                        and position while he was taking part on the VR experience.<br/>
-									</span>
-                                    <span>
-                                        Use of this system and data has shown that even small fixational head movements
-                                        contribute significant depth information in the space nearby the observer.
-                                    </span>
-								</div>
-								<div class="clearfix"></div>
-								<div class="col-sm-2" style="margin-top: 1em; margin-left:1em;">
-									<img class="img-responsive" src="/media/ap-lab.jpg">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-
-				<div id="resume" class="section">
-					<div class="container">
-						<div class="title normal-padding"><h1>>Resume<span id="span2">_</span></h1></div>
-						<div class="resume" >
-							<h4><a href="/documents/MIGUEL_VALDEZ_RESUME.pdf" target="_blank">View</a> or <a href="/documents/MIGUEL_VALDEZ_RESUME.pdf" download="MIGUEL_VALDEZ_RESUME.pdf">download</a> my updated Resume</h4>
-						</div>
-					</div>
-				</div>
-
-
-				<div id="contact" class="row section">
-					<div class="container">
-						<div class="title normal-padding"><h1>>Contact<span id="span7">_</span></h1></div>
-						<div class="col-sm-5">
-							<h4>You can find me on:</h4>
-							<ul>
-								<li><h4><a href="https://mail.google.com/mail/?view=cm&fs=1&to=mvg35@bu.com" target="_blank">mvg35@bu.edu</a></h4></li>
-								<li><h4><a href="https://instagram.com/miguel_24v" target="_blank">Instagram</a></h4></li>
-								<li><h4><a href="https://facebook.com/miguel.valdez.526" target="_blank">facebook</a></h4></li>
-								<li><h4><a href="https://linkedin.com/in/miguelvaldez35/" target="_blank">LinkedIn</a></h4></li>
-							</ul>
-							<span>Most of my worthy repos are private, sorry about that.</span>
-
-						</div>
-						<div class="clearfix"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="overlay hidden">
-		</div>
-
-		<div class="pop-up hidden" id="paper-scissors-rock-div">
-			<div class="container">
-				<div class="row">
-					<a href="#" class="pop-up-close"><i class="fa fa-times fa-2x pull-right" aria-hidden="true"></i></a>
-				</div>
-				<div class="scroll-div">
-					<h2>Gesture Recognition: Paper, Scissors, Rock, Shoot!</h2>
-					<h3>Description</h3>
-					<p>In our implementation of the Gesture Recognition assignment, we decided to create an interactive
-						game where the user plays several games of paper scissors rock against the machine.
-						The user plays by having his hand in front of the camera, using a special movement to start a round,
-						and simply shooting either paper, scissors, or rock at the correct time in order to compare it
-						against the machine's output and then decide who the winner for the round is.
-					</p>
-					<div class="col-sm-4">
-						<img class="img-responsive" src="/media/paper.png">
-					</div>
-					<div class="col-sm-4">
-						<img class="img-responsive" src="/media/scissors.png">
-					</div>
-
-					<div class="col-sm-4">
-						<img class="img-responsive" src="/media/rock.png">
-					</div>
-
-					<div class="clearfix"></div>
-					<h3>Breaking it apart</h3>
-					<p>
-						In order to achieve this, we wrote a program with the help of OpenCV in order to analyze the
-						camera's input.<br/>
-						We decided to use color segmentation in order to find the hand's location.
-						After that, we depended a lot on the OpenCV function findContours, which helped us get a
-                        clear image of the largest area available after our color segmentation function - the hand.
-						By using this function, we were able to get the hand in a well defined shape.<br/>
-						After having good sense of the hand's location, we decided to go with finger counting,
-                        we achieved this by using the function Convex Hull.<br/>
-						Logically, we are calculating the convex hull of our largest contour. Convex Hull ends up
-						returning a polygon from which we deducted that the corners would be seen as fingers.
-						From there, the algorithm is fairly simple, from 0-1 fingers means "rock", from 2-3 means "scissors",
-						and any more than that means "paper".<br/>
-						We also worked on detecting the center of our hand (as shown with the blue circle) in order to
-						be able to track the movements of it.
-						The algorithm for palm center detection finds the defects (the distance between the tip tow and
-						the convex point) and using the defects array, it calculates the palm center.<br/>
-						It gets the rough palm center by getting the average of all defect points. Then it chooses the 3
-						closest points and gets the circle radius and center which is the palm center.
-					</p>
-				</div>
-			</div>
-		</div>
-
-
-		<div class="pop-up hidden" id="solar-panel-div">
-			<div class="container">
-				<div class="row">
-					<a href="#" class="pop-up-close"><i class="fa fa-times fa-2x pull-right" aria-hidden="true"></i></a>
-				</div>
-				<div class="scroll-div">
-					<h2>Light Seeking Solar Panel</h2>
-					<h3>Problem</h3>
-					<p>For this project we were assigned to create a basic web server that interacted with a physical computing system.
-						The server was written in C language and it conformed to HTTP/1.x for the purposes
-						of client requests, and it processed client HTTP GET requests for web pages hosted on the server machine.
-						We used sockets to implement the communication between a client on one machine and
-						the server on either the same or a remote machine.</p>
-					<p>
-						For the physical computing part, we decided to use an Arduino board and with it we built a pseudo
-						solar panel which could be controlled either manually or through the server's interface. An advantage to
-						using the Arduino was that we were able to program some automation to it. The 'Solar Panel' was
-						able to detect the sources of light and adjust its own position according to it.
-					</p>
-					<div class="col-sm-3 col-sm-offset-3">
-						<img class="img-responsive" src="/media/solar-panel.png">
-					</div>
-
-					<div class="col-sm-3">
-						<img class="img-responsive" src="/media/solar-panel-logic.png">
-					</div>
-
-                    <div class="col-sm-3">
-                        <video width="300px" height="auto" controls>
-                            <source src="/media/solar-panel-vid.mov">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <div class="clearfix"></div>
-                    <p style="padding-top: 1em;">The logic behind the panel's movement was pretty straight forward. As shown by the second picture,
-                    using three different photocell sensors distributed across the board we could create an average
-                    which indicated from which position was the light source coming from, readjusting the panel's position
-                        in order to get the possible values for each sensor.
-                    </p>
-				</div>
-			</div>
-		</div>
-
-		<div class="pop-up hidden" id="google-search-div">
-			<div class="container">
-				<div class="row">
-					<a href="#" class="pop-up-close"><i class="fa fa-times fa-2x pull-right" aria-hidden="true"></i></a>
-				</div>
-				<div class="scroll-div">
-					<h2>Google Search Operators App</h2>
-					<h3>Problem</h3>
-                    <p>In this side project, my main goal was to get familiar with the development environment for mobile apps,
-                    in this case iOS apps. I decided to work on an app that essentially facilitated but more importantly
-                    that educated users about the multiple Search Operators that are offered by Google's search engine.
-                    </p>
-                    <p>
-                    The explanation for this pseudo app is that a user is shown some common search operators which they can
-                    use real time in order to have a better search result in their query. Once the user has its query complete,
-                    the app will open a webView with the results of their search - hoping to get a better results than a
-                        search that doesn't has the search operators.
-                    </p>
-                    <p>
-                       An explanation of each search operator and its use is given in the More Info button. Ultimately
-                        this app would've been a tutorial hoping for users to stop using the app once they got familiar
-                        with the search operators.
-                    </p>
-
-					<div class="col-sm-4">
-						<img class="img-responsive" src="/media/1.png">
-					</div>
-					<div class="col-sm-4">
-						<img class="img-responsive" src="/media/2.png">
-					</div>
-					<div class="col-sm-4">
-						<img class="img-responsive" src="/media/3.png">
-					</div>
-					<div class="clearfix"></div>
-
-				</div>
-			</div>
-		</div>
-		<div class="pop-up hidden" id="structured-face-recognition">
-			<div class="container">
-				<div class="row">
-					<a href="#" class="pop-up-close"><i class="fa fa-times fa-2x pull-right" aria-hidden="true"></i></a>
-				</div>
-				<div class="scroll-div">
-					<h2>Structured Face Recognition</h2>
-                    <embed src="/documents/face-recognition.pdf" width="100%" height="100%"/>
-					<div class="clearfix"></div>
-				</div>
-			</div>
-		</div>
+            <section id="resume">
+                <p>
+                    <a href="/documents/MIGUEL_VALDEZ_RESUME.pdf" target="_blank">View</a> or <a href="/documents/MIGUEL_VALDEZ_RESUME.pdf" download="MIGUEL_VALDEZ_RESUME.pdf"> download</a> my updated resume
+                </p>
+            </section>
+        </div>
+        </div>
     </body>
-	<script type="text/javascript" src="/scripts/GLscripts/mainEarth.js"></script>
 </html>

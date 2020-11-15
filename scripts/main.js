@@ -84,5 +84,5 @@ $(document).ready(function() {
         $('.overlay').removeClass('hidden');
         $('.main-div').css('overflow-y', 'hidden');
 
-    });
+	});
 });
