@@ -1,0 +1,462 @@
+<html>
+    <head>
+        <link rel="icon" type="image/png" href="/media/favicon.ico">
+        <title>mvg35 | Gears</title>
+        <script type="text/javascript" src="https://use.fontawesome.com/730e03c3db.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="/scripts/three.min.js"> </script>
+        <style>
+            body {
+                margin: 0;
+                overflow-x:hidden;
+                overflow-y: hidden;
+            }
+
+            canvas {
+                width: 100%;
+                height: 100%;
+
+            }
+
+            .instructions-div {
+                position:fixed;
+                width: 30vw;
+                height: auto;
+                z-index: 100;
+                background: rgba(200, 200, 200, 0.4);
+                bottom:0;
+                left:0;
+            }
+        </style>
+
+
+    </head>
+
+    <body>
+        <div class="instructions-div">
+            <div class="container">
+
+                <h3 style="color:white;">Movement Instructions</h3>
+                <p style="color:white;">
+                    (Desktop)<br/>
+                    <i class="fa fa-angle-up" aria-hidden="true"></i> Moves Camera forward<br/>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i> Rotates Camera right<br/>
+                    <i class="fa fa-angle-left" aria-hidden="true"></i> Rotates Camera left<br/>
+                    <i class="fa fa-angle-down" aria-hidden="true"></i> Moves Camera back<br/>
+                    W Moves Camera Up<br/>
+                    S Moves Camera Down
+                </p>
+            </div>
+        </div>
+
+        <script>
+
+            window.addEventListener('keydown',doKeyDown,true);
+            var cam_zpos = 15.0;
+            var cam_xpos = 0.0;
+            var Pi = 3.14159265358;
+            // x grados a radianes -        x * Pi / 180
+            // x radianes a grados -        x * 180 / Pi
+            var ang_rad = 0;
+
+
+            function transformToRadians(degrees) {
+
+                return degrees * (Math.PI / 180);
+
+            }
+
+            function doKeyDown(evt){
+                console.log("Tecla picada: "+evt.keyCode);
+                switch (evt.keyCode) {
+                    case 38:  /* Up arrow was pressed */
+                        var dx = 0.5 * Math.sin(ang_rad);
+                        var dz = 0.5 * Math.cos(ang_rad);
+                        cam_zpos -= dz;
+                        cam_xpos -= dx;
+                        break;
+                    case 40:  /* Down arrow was pressed */
+                        var dx = 0.5 * Math.sin(ang_rad);
+                        var dz = 0.5 * Math.cos(ang_rad);
+                        cam_zpos += dz;
+                        cam_xpos += dx;
+                        break;
+                    case 37:  /* Left arrow was pressed */
+                        ang_rad += (5* Pi / 180);
+                        break;
+                    case 39:  /* Right arrow was pressed */
+                        ang_rad -= (5* Pi / 180);
+                        break;
+
+                    case 87:  /* W was pressed */
+                        camera.position.y += 0.5;
+                        break;
+
+                    case 83:  /* S was pressed */
+                        camera.position.y -= 0.5;
+                        break;
+
+                    case 69:  /* E was pressed */
+
+                        break;
+
+                    case 68:  /* D was pressed */
+
+                        break;
+                }
+            }
+            var scene = new THREE.Scene();
+            var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.01, 1000);
+            var renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setClearColor(0x000000, 1);
+
+
+            document.body.appendChild(renderer.domElement);
+
+
+            var geom = new THREE.Geometry();
+
+            geom.vertices.push(new THREE.Vector3(1, 0, 0));   // index 0
+
+            geom.vertices.push(new THREE.Vector3(Math.cos(transformToRadians(15)),
+                Math.sin(transformToRadians(15)), 0));   // index 1
+
+            geom.vertices.push(new THREE.Vector3(Math.cos(transformToRadians(15)) * .5,
+                Math.sin(transformToRadians(15)) * .5, 0));
+
+            geom.vertices.push(new THREE.Vector3(Math.cos(transformToRadians(30)) * .5,
+                Math.sin(transformToRadians(30)) * .5, 0));
+
+            geom.vertices.push(new THREE.Vector3(Math.cos(transformToRadians(30)) * 3,
+                Math.sin(transformToRadians(30)) * 3, 0));
+
+            geom.vertices.push(new THREE.Vector3(Math.cos(transformToRadians(22.5)) * 3,
+                Math.sin(transformToRadians(22.5)) * 3, 0));
+
+            geom.vertices.push(new THREE.Vector3(Math.cos(transformToRadians(22.5)) * 3.5,
+                Math.sin(transformToRadians(22.5)) * 3.5, 0));
+
+            geom.vertices.push(new THREE.Vector3(Math.cos(transformToRadians(15)) * 3.5,
+                Math.sin(transformToRadians(15)) * 3.5, 0));
+
+            geom.vertices.push(new THREE.Vector3(Math.cos(transformToRadians(15)) * 3,
+                Math.sin(transformToRadians(15)) * 3, 0));
+
+            geom.vertices.push(new THREE.Vector3(Math.cos(transformToRadians(7.5)) * 3,
+                Math.sin(transformToRadians(7.5)) * 3, 0));
+
+            geom.vertices.push(new THREE.Vector3(Math.cos(transformToRadians(7.5)) * 3.5,
+                Math.sin(transformToRadians(7.5)) * 3.5, 0));
+
+            geom.vertices.push(new THREE.Vector3(Math.cos(transformToRadians(0)) * 3.5,
+                Math.sin(transformToRadians(0)) * 3.5, 0));
+
+            geom.vertices.push(new THREE.Vector3(1, 0, -1));   // index 0
+
+            geom.vertices.push(new THREE.Vector3(Math.cos(transformToRadians(15)),
+                Math.sin(transformToRadians(15)), -1));   // index 1
+
+            geom.vertices.push(new THREE.Vector3(Math.cos(transformToRadians(15)) * .5,
+                Math.sin(transformToRadians(15)) * .5, -1));
+
+            geom.vertices.push(new THREE.Vector3(Math.cos(transformToRadians(30)) * .5,
+                Math.sin(transformToRadians(30)) * .5, -1));
+
+            geom.vertices.push(new THREE.Vector3(Math.cos(transformToRadians(30)) * 3,
+                Math.sin(transformToRadians(30)) * 3, -1));
+
+            geom.vertices.push(new THREE.Vector3(Math.cos(transformToRadians(22.5)) * 3,
+                Math.sin(transformToRadians(22.5)) * 3, -1));
+
+            geom.vertices.push(new THREE.Vector3(Math.cos(transformToRadians(22.5)) * 3.5,
+                Math.sin(transformToRadians(22.5)) * 3.5, -1));
+
+            geom.vertices.push(new THREE.Vector3(Math.cos(transformToRadians(15)) * 3.5,
+                Math.sin(transformToRadians(15)) * 3.5, -1));
+
+            geom.vertices.push(new THREE.Vector3(Math.cos(transformToRadians(15)) * 3,
+                Math.sin(transformToRadians(15)) * 3, -1));
+
+            geom.vertices.push(new THREE.Vector3(Math.cos(transformToRadians(7.5)) * 3,
+                Math.sin(transformToRadians(7.5)) * 3, -1));
+
+            geom.vertices.push(new THREE.Vector3(Math.cos(transformToRadians(7.5)) * 3.5,
+                Math.sin(transformToRadians(7.5)) * 3.5, -1));
+
+            geom.vertices.push(new THREE.Vector3(Math.cos(transformToRadians(0)) * 3.5,
+                Math.sin(transformToRadians(0)) * 3.5, -1));
+
+            geom.vertices.push(new THREE.Vector3(Math.cos(transformToRadians(0)) * 3,
+                Math.sin(transformToRadians(0)) * 3, -1));
+
+
+            //right
+            geom.faces.push( new THREE.Face3(2, 4, 3));      // index 0
+            geom.faces.push( new THREE.Face3(1, 4, 2));      // index 1
+
+            //left
+            geom.faces.push( new THREE.Face3(0, 4, 1));      // index 2
+            geom.faces.push( new THREE.Face3(5, 4, 0));      // index 3
+
+            //front
+            geom.faces.push( new THREE.Face3(8, 5, 0));      // index 4
+            geom.faces.push( new THREE.Face3(9, 8, 0));      // index 5
+
+            //back
+            geom.faces.push( new THREE.Face3(11, 9, 0));      // index 6
+            geom.faces.push( new THREE.Face3(11, 10, 9));      // index 7
+
+            //top
+            geom.faces.push( new THREE.Face3(8, 7, 5));      // index 8
+            geom.faces.push( new THREE.Face3(7, 6, 5));
+
+            geom.faces.push( new THREE.Face3(15, 16, 14));      // index 0
+            geom.faces.push( new THREE.Face3(14, 16, 13));      // index 1
+
+            //left
+            geom.faces.push( new THREE.Face3(13, 16, 12));      // index 2
+            geom.faces.push( new THREE.Face3(12, 16, 17));      // index 3
+
+            //front
+            geom.faces.push( new THREE.Face3(12, 17, 20));      // index 4
+            geom.faces.push( new THREE.Face3(12, 20, 21));      // index 5
+
+            //back
+            geom.faces.push( new THREE.Face3(12, 21, 23));      // index 6
+            geom.faces.push( new THREE.Face3(21, 22, 23));      // index 7
+
+            //top
+            geom.faces.push( new THREE.Face3(17, 19, 20));      // index 8
+            geom.faces.push( new THREE.Face3(17, 18, 19));
+
+
+            geom.faces.push( new THREE.Face3(12, 0, 1));      // index 8
+            geom.faces.push( new THREE.Face3(13, 12, 1));
+
+            geom.faces.push( new THREE.Face3(2, 1, 13));      // index 8
+            geom.faces.push( new THREE.Face3(14, 2, 13));
+
+            geom.faces.push( new THREE.Face3(14, 2, 3));      // index 8
+            geom.faces.push( new THREE.Face3(15, 14, 3));
+
+            geom.faces.push( new THREE.Face3(3, 4, 15));      // index 8
+            geom.faces.push( new THREE.Face3(15, 4, 16));
+
+            geom.faces.push( new THREE.Face3(4, 5, 17));      // index 8
+            geom.faces.push( new THREE.Face3(16, 4, 17));
+
+            geom.faces.push( new THREE.Face3(6, 7, 19));      // index 8
+            geom.faces.push( new THREE.Face3(18, 6, 19));
+
+            geom.faces.push( new THREE.Face3(8, 9, 21));      // index 8
+            geom.faces.push( new THREE.Face3(20, 8, 21));
+
+            geom.faces.push( new THREE.Face3(10, 11, 23));      // index 8
+            geom.faces.push( new THREE.Face3(22, 10, 23));
+
+            geom.faces.push( new THREE.Face3(17, 5, 6));      // index 8
+            geom.faces.push( new THREE.Face3(17, 6, 18));
+
+            geom.faces.push( new THREE.Face3(7, 8, 20));      // index 8
+            geom.faces.push( new THREE.Face3(19, 7, 20));
+
+            geom.faces.push( new THREE.Face3(21, 9, 10));      // index 8
+            geom.faces.push( new THREE.Face3(21, 10, 22));
+
+            geom.faces.push( new THREE.Face3(11, 0, 12));      // index 8
+            geom.faces.push( new THREE.Face3(23, 11, 12));
+
+            geom.computeFaceNormals();
+
+
+            var redMaterial = new THREE.MeshLambertMaterial({
+                color: 0xff0000                            });
+
+            var greenMaterial = new THREE.MeshLambertMaterial({
+                color: 0x00ff00                            });
+
+            var blueMaterial = new THREE.MeshLambertMaterial({
+                color: 0x0000ff                            });
+
+            var platinumMaterial = new THREE.MeshLambertMaterial({
+                color: 0xe5e4e2                            });
+
+            var longGearGeometry = new THREE.CylinderGeometry(.4, .4, 14, 50, 0, false);
+            var longGear = new THREE.Mesh(longGearGeometry, platinumMaterial);
+            longGear.position.set(0,0,0);
+            longGear.rotation.z =+ transformToRadians(90);
+            scene.add(longGear);
+
+
+            //red gear
+            var g1p0 = new THREE.Mesh(geom, redMaterial);
+            var g1p1 = new THREE.Mesh(geom, redMaterial);
+            g1p1.rotation.z += transformToRadians(30);
+            var g1p2 = new THREE.Mesh(geom, redMaterial);
+            g1p2.rotation.z += transformToRadians(60);
+            var g1p3 = new THREE.Mesh(geom, redMaterial);
+            g1p3.rotation.z += transformToRadians(90);
+            var g1p4 = new THREE.Mesh(geom, redMaterial);
+            g1p4.rotation.z += transformToRadians(120);
+            var g1p5 = new THREE.Mesh(geom, redMaterial);
+            g1p5.rotation.z += transformToRadians(150);
+            var g1p6 = new THREE.Mesh(geom, redMaterial);
+            g1p6.rotation.z += transformToRadians(180);
+            var g1p7 = new THREE.Mesh(geom, redMaterial);
+            g1p7.rotation.z += transformToRadians(210);
+            var g1p8 = new THREE.Mesh(geom, redMaterial);
+            g1p8.rotation.z += transformToRadians(240);
+            var g1p9 = new THREE.Mesh(geom, redMaterial);
+            g1p9.rotation.z += transformToRadians(270);
+            var g1p10 = new THREE.Mesh(geom, redMaterial);
+            g1p10.rotation.z += transformToRadians(300);
+            var g1p11 = new THREE.Mesh(geom, redMaterial);
+            g1p11.rotation.z += transformToRadians(330);
+
+            gear1 = new THREE.Object3D();
+
+            gear1.add(g1p0);
+            gear1.add(g1p1);
+            gear1.add(g1p2);
+            gear1.add(g1p3);
+            gear1.add(g1p4);
+            gear1.add(g1p5);
+            gear1.add(g1p6);
+            gear1.add(g1p7);
+            gear1.add(g1p8);
+            gear1.add(g1p9);
+            gear1.add(g1p10);
+            gear1.add(g1p11);
+
+            //green gear
+            var g2p0 = new THREE.Mesh(geom, greenMaterial);
+            var g2p1 = new THREE.Mesh(geom, greenMaterial);
+            g2p1.rotation.z += transformToRadians(30);
+            var g2p2 = new THREE.Mesh(geom, greenMaterial);
+            g2p2.rotation.z += transformToRadians(60);
+            var g2p3 = new THREE.Mesh(geom, greenMaterial);
+            g2p3.rotation.z += transformToRadians(90);
+            var g2p4 = new THREE.Mesh(geom, greenMaterial);
+            g2p4.rotation.z += transformToRadians(120);
+            var g2p5 = new THREE.Mesh(geom, greenMaterial);
+            g2p5.rotation.z += transformToRadians(150);
+            var g2p6 = new THREE.Mesh(geom, greenMaterial);
+            g2p6.rotation.z += transformToRadians(180);
+            var g2p7 = new THREE.Mesh(geom, greenMaterial);
+            g2p7.rotation.z += transformToRadians(210);
+            var g2p8 = new THREE.Mesh(geom, greenMaterial);
+            g2p8.rotation.z += transformToRadians(240);
+            var g2p9 = new THREE.Mesh(geom, greenMaterial);
+            g2p9.rotation.z += transformToRadians(270);
+            var g2p10 = new THREE.Mesh(geom, greenMaterial);
+            g2p10.rotation.z += transformToRadians(300);
+            var g2p11 = new THREE.Mesh(geom, greenMaterial);
+            g2p11.rotation.z += transformToRadians(330);
+
+            gear2 = new THREE.Object3D();
+
+            gear2.add(g2p0);
+            gear2.add(g2p1);
+            gear2.add(g2p2);
+            gear2.add(g2p3);
+            gear2.add(g2p4);
+            gear2.add(g2p5);
+            gear2.add(g2p6);
+            gear2.add(g2p7);
+            gear2.add(g2p8);
+            gear2.add(g2p9);
+            gear2.add(g2p10);
+            gear2.add(g2p11);
+
+
+            //blue gear
+            var g3p0 = new THREE.Mesh(geom, blueMaterial);
+            var g3p1 = new THREE.Mesh(geom, blueMaterial);
+            g3p1.rotation.z += transformToRadians(30);
+            var g3p2 = new THREE.Mesh(geom, blueMaterial);
+            g3p2.rotation.z += transformToRadians(60);
+            var g3p3 = new THREE.Mesh(geom, blueMaterial);
+            g3p3.rotation.z += transformToRadians(90);
+            var g3p4 = new THREE.Mesh(geom, blueMaterial);
+            g3p4.rotation.z += transformToRadians(120);
+            var g3p5 = new THREE.Mesh(geom, blueMaterial);
+            g3p5.rotation.z += transformToRadians(150);
+            var g3p6 = new THREE.Mesh(geom, blueMaterial);
+            g3p6.rotation.z += transformToRadians(180);
+            var g3p7 = new THREE.Mesh(geom, blueMaterial);
+            g3p7.rotation.z += transformToRadians(210);
+            var g3p8 = new THREE.Mesh(geom, blueMaterial);
+            g3p8.rotation.z += transformToRadians(240);
+            var g3p9 = new THREE.Mesh(geom, blueMaterial);
+            g3p9.rotation.z += transformToRadians(270);
+            var g3p10 = new THREE.Mesh(geom, blueMaterial);
+            g3p10.rotation.z += transformToRadians(300);
+            var g3p11 = new THREE.Mesh(geom, blueMaterial);
+            g3p11.rotation.z += transformToRadians(330);
+
+            gear3 = new THREE.Object3D();
+
+            gear3.add(g3p0);
+            gear3.add(g3p1);
+            gear3.add(g3p2);
+            gear3.add(g3p3);
+            gear3.add(g3p4);
+            gear3.add(g3p5);
+            gear3.add(g3p6);
+            gear3.add(g3p7);
+            gear3.add(g3p8);
+            gear3.add(g3p9);
+            gear3.add(g3p10);
+            gear3.add(g3p11);
+
+            gear1.rotation.y = transformToRadians(90);
+            gear1.position.x -= 6;
+            gear2.rotation.y = transformToRadians(90);
+            gear2.position.x += 6;
+            gear3.rotation.y = transformToRadians(90);
+            gear3.position.x += 6;
+            gear3.position.y += 6.5;
+
+            scene.add(gear1);
+            scene.add(gear2);
+            scene.add(gear3);
+
+            camera.position.y = 0;
+            camera.position.z = cam_zpos;
+
+            // create a point light
+            var pointLight = new THREE.PointLight( 0xFFFFFF );
+            pointLight.position.x = 150;
+            pointLight.position.y = 50;
+            pointLight.position.z = 130;
+
+            var pointLight2 = new THREE.PointLight( 0xFFFFFF );
+            pointLight2.position.x = -150;
+            pointLight2.position.y = -50;
+            pointLight2.position.z = -130;
+
+            scene.add(pointLight);
+            scene.add(pointLight2);
+
+
+
+            var render = function () {
+                requestAnimationFrame(render);
+
+                gear1.rotation.x += 0.01;
+                gear2.rotation.x += 0.01;
+                gear3.rotation.x -= 0.01;
+                //longGear.rotation.x =+ 0.01;
+
+                camera.position.z = cam_zpos;
+                camera.position.x = cam_xpos;
+                camera.rotation.y = ang_rad;
+                renderer.render(scene, camera);
+            };
+            render();
+
+
+        </script>
+    </body>
+</html>

@@ -1,7 +1,17 @@
+//pagina de educacion con el jam
+//photos on wood
 const MY_WORK = [
     {
-        url: 'https://thrivemusic.com',
+        url: 'http://thrivemusic.com',
         image: 'thrivemusic.png'
+    },
+    {
+        url: 'https://tacotote.com',
+        image: 'tacotote.png'
+    },
+    {
+        url: 'https://anson11.com',
+        image: 'anson11.png'
     },
     {
         url: 'http://ninskers.com',
@@ -20,12 +30,12 @@ const MY_WORK = [
         image: 'vipsavings.png'
     },
     {
-        url: 'https://linkelite.com',
-        image: 'linkelite.png'
+        url: 'https://blushskin.com',
+        image: 'blush.png'
     },
     {
-        url: 'https://tacotote.com',
-        image: 'tacotote.png'
+        url: 'https://linkelite.com',
+        image: 'linkelite.png'
     },
     {
         url: 'https://eatardeo.com',
@@ -34,10 +44,6 @@ const MY_WORK = [
     {
         url: 'http://texasmedicalcareplans.com',
         image: 'tmcp.png'
-    },
-    {
-        url: 'https://anson11.com',
-        image: 'anson11.png'
     },
     {
         url: 'https://phidevinc.com',
@@ -64,10 +70,6 @@ const MY_WORK = [
         image: 'esperanza.png'
     },
     {
-        url: 'https://blushskin.com',
-        image: 'blush.png'
-    },
-    {
         url: 'https://funnyhoodvidz.com',
         image: 'funny.png'
     },
@@ -78,10 +80,6 @@ const MY_WORK = [
     {
         url: 'https://9capital.com',
         image: '9capital.png'
-    },
-    {
-        url: 'https://ivinfusions.com',
-        image: 'iv.png'
     },
     {
         url: 'https://brooklinepsych.com',
@@ -98,6 +96,10 @@ const MY_WORK = [
     {
         url: 'https://rivastacoshop.com',
         image: 'rivas.png'
+    },
+    {
+        url: 'https://ivinfusions.com',
+        image: 'iv.png'
     },
     {
         url: 'https://extendedplay.com',
@@ -186,6 +188,12 @@ $(document).ready(function() {
                 behavior: 'smooth'
             });
         }
+    });
+
+    $('#scroll-down').click(() => {
+        document.querySelector('#my-work').scrollIntoView({
+            behavior: 'smooth'
+        });
     });
 });
 

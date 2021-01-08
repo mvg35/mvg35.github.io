@@ -20,6 +20,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
         <script type="text/javascript" src="/scripts/new_main.js"></script>
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
         <script src="/scripts/play-all-model-animations.js"></script>
 
         <script>
@@ -66,7 +67,7 @@
                         <span id="red"> Mexico.</span>
                     </a><br/>
                     <a id="living" href="https://en.wikipedia.org/wiki/Phoenix,_Arizona" target="_blank">
-                        Living in <span class="maroon">Phoenix</span>, <span class="maroon"Arizona.</span>
+                        Living in <span class="maroon">Phoenix</span>, <span class="maroon">Arizona.</span>
                     </a><br/>
                     <a id="working" href="http://www.appliedmaterials.com" target="_blank">
                         Working at 
@@ -89,7 +90,7 @@
             </section>
 
             <section id="vr">
-                <a-scene embedded>
+                <a-scene embedded cursor="rayOrigin:mouse">
                     <!-- (Left, Right) - (Up Down) - (Front Back) -->
                     <a-assets>
                         <a-asset-item id="cityModel" src="https://cdn.aframe.io/test-models/models/glTF-2.0/virtualcity/VC.gltf"></a-asset-item>
@@ -164,7 +165,7 @@
                     </a-box>
                     
                     <!-- <a-sky color="#101820"></a-sky> -->
-                    <a-entity id="camera" look-controls position="0 1 0" camera wasd-controls="acceleration:100">
+                    <a-entity id="camera" look-controls position="0 1 0" camera wasd-controls="acceleration:100" mouse-cursor>
                         <a-cursor color ="#CCCCCC" cursor="fuse: true; fuseTimeout: 1500;">
                         </a-cursor>
                     </a-entity>
@@ -173,7 +174,7 @@
             
             <section id="my-work">
                 <div>
-                    <p style="margin-top:10em;">I've been able to be part of the following projects:</p>
+                    <p style="margin-top:10em;">I've been able to work on the following projects:</p>
                     <ul id="my-work-list">
                     </ul>
                     <p>and more...</p>
