@@ -29,7 +29,7 @@ class Tabs extends React.Component {
                     <h5>Hola y gracias por ayudarnos con la limpieza de este AirBNB</h5>
 
                     <div className="row">
-                        <div className="col s6 offset-s3">
+                        <div className="col s8 offset-s2">
                             <img className="responsive-img" src="/media/airbnb/initial.png" />
                         </div>
                     </div>
@@ -81,7 +81,7 @@ class Tabs extends React.Component {
     renderContent(content) {
         return(
             <div className="row">
-                <div className="col s6 offset-s3">
+                <div className="col s10 offset-s1">
                     <img className="responsive-img" src={`/media/airbnb/${content}`}></img>
                 </div>
             </div>
