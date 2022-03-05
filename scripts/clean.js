@@ -10,7 +10,7 @@ const config = [
     {
         section_name: 'Iniciales', tasks: [
             { text: 'Favor de asegurarse que este la tarjetita escrita y la otra. Favor de decirme si una no esta, la segunda es muy importante', content: 'entrada.png' },
-            { text: 'Visitar cada cuarto y empezar con la lavadera de las camas que hayan sido usadas. Esto es critico ya que es lo que mas tiempo tomara', content: 'lavadora.png' },
+            { text: 'Visitar cada cuarto y empezar con la lavadera de las camas que hayan sido usadas. Tambien de trapos de los baños, etc. Esto es critico ya que es lo que mas tiempo tomara', content: 'lavadora.png' },
             { text: 'Trate de incluir a la lavadora (o hacer una especial) para los trapos que se hayan usado en la limpieza pasada, asi para irlos rotando' },
             { text: 'En este gabinete al fondo encontrara esta llave, la cual abre el cuartito de atras donde esta todo lo necesario para la limpieza', content: 'cuartito_key.png' },
             { text: 'En el cuartito de atras tratamos de tener las cosas organizadas, tome todo lo que vaya a requerir y al finalizar regreselas a su lugar por favor', content: 'cuarto_limpieza.png' },
@@ -27,9 +27,25 @@ const config = [
     {
         section_name: 'Comedor', tasks: [
             { text: 'Verificar que la camara de la puerta trasera este bien y conectada'},
-            { text: 'Verificar que la el centro de mesa tenga lo princial: sal, pimienta, '},
-            { text: 'Verificar que la mesa y sillas no tengan algun daño'},
+            { text: 'Verificar que la el centro de mesa tenga lo princial: sal, pimienta, jarroncitos'},
+            { text: 'Verificar que la mesa y sillas no tengan algun daño o mancha grave'},
             { text: 'Verificar que esten las 4 decoraciones, 3 patitos', content: 'comedor.jpg' },
+        ]
+    },
+    // {
+    //     section_name: 'Cocina', tasks: [
+    //         { text: 'Verificar que la camara de la puerta trasera este bien y conectada'},
+    //         { text: 'Verificar que la el centro de mesa tenga lo princial: sal, pimienta, jarroncitos'},
+    //         { text: 'Verificar que la mesa y sillas no tengan algun daño o mancha grave'},
+    //         { text: 'Verificar que esten las 4 decoraciones, 3 patitos', content: 'comedor.jpg' },
+    //     ]
+    // },
+    {
+        section_name: 'Banos', tasks: [
+            { text: 'En regaderas, favor de rellenar el shampoo y jabón liquido (body wash). No dejar que baje de la mitad. El shampoo es el blanco (el que esta mas cerca a la pared/esquina - izquierdo en regadera 1 y derecho en regadera 2) y el jabon el mas rosado', content: 'banos.jpg'},
+            { text: 'En todos los baños, rellenar o mantener lo mas lleno posible el jabon de mano liquido - todos estos limpiadores estaran en el cuartito para rellenar', content: 'cuarto_limpieza_2.jpg'},
+            { text: 'Dejar un rollo de papel lleno puesto, y otros 2 ya sean dos nuevos o uno nuevo y otro semi nuevo'},
+            { text: 'Acomodar los gabinetes de los baños, el baño del cuarto principal tiene varias cosas como botiquin de salud, o qtips - ' },
         ]
     },
 ];
@@ -41,21 +57,24 @@ class Tabs extends React.Component {
     
     render() {
         return(
-            <div className="main-tab-div" style={{height: 'auto'}}>
-                <div className="container" style={{textAlign:'center'}}>
+            <div className="main-tab-div">
+                <div className="container" style={{textAlign:'center', marginBottom: '3em'}}>
                     <h5>
                         Hola y gracias por ayudarnos con la limpieza de este AirBNB
                     </h5>
 
-                    <div className="row" style={{marginBottom: '3em'}}>
+                    <div className="row">
                         <div className="col s8 offset-s2">
                             <img className="responsive-img" src="/media/airbnb/initial.jpeg" />
                         </div>
                     </div>
-                    <span>*** Asumimos que la casa es limpiada, barrida, trapeada, desinfectada y sacudida en general ***</span>
+                    <span>
+                        *** Asumimos que la casa es limpiada, barrida, trapeada, desinfectada y sacudida en general ***<br/>
+                        *** Favor de avisarme cuando se este acabando un producto - si ya no aguanta otras 3 limpiadas/rellenadas ***
+                    </span>
                 </div>
 
-                <div>
+                <div style={{display:'flex', height: '100vh'}}>
                     <div className="tab">
                         {
                             config.map((con, index) => {
@@ -69,32 +88,34 @@ class Tabs extends React.Component {
                             })
                         }
                     </div>
-                    { 
-                        config.map((con, index) => {
-                            return(
-                                <div id={con.section_name} className="tabcontent" key={index}>
-                                    <h4>{con.section_name}</h4>
-                                    {
-                                        con.tasks.map((task, index) => {
-                                            return (
-                                                <div key={index}>
-                                                    <label>
-                                                        <input type="checkbox" />
-                                                        <span style={{height: 'auto', marginBottom: '1em'}}>
-                                                            {task.text}
-                                                        </span>
-                                                    </label>
-                                                    <div>
-                                                        {task.content ? this.renderContent(task.content) : ''}
+                    <div className="tab-content-div">
+                        { 
+                            config.map((con, index) => {
+                                return(
+                                    <div id={con.section_name} className="tabcontent" key={index}>
+                                        <h4>{con.section_name}</h4>
+                                        {
+                                            con.tasks.map((task, index) => {
+                                                return (
+                                                    <div key={index}>
+                                                        <label>
+                                                            <input type="checkbox" />
+                                                            <span style={{height: 'auto', marginBottom: '1em'}}>
+                                                                {task.text}
+                                                            </span>
+                                                        </label>
+                                                        <div>
+                                                            {task.content ? this.renderContent(task.content) : ''}
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            )
-                                        })
-                                    }
-                                </div>
-                            )
-                        }) 
-                    }
+                                                )
+                                            })
+                                        }
+                                    </div>
+                                )
+                            }) 
+                        }
+                    </div>
                 </div>
                 
             </div>
@@ -134,8 +155,6 @@ class Tabs extends React.Component {
 }
 
 ReactDOM.render(
-    <div>
-        <Tabs />
-    </div>,
+    <Tabs />,
     document.getElementById('react-div')
 );
