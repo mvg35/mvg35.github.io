@@ -8,10 +8,12 @@ const config = [
         ]
     },
     {
-        section_name: 'Iniciales', tasks: [
+        section_name: 'Iniciales/Generales', tasks: [
             { text: 'Favor de asegurarse que este la tarjetita escrita y la otra. Favor de decirme si una no esta, la segunda es muy importante', content: 'entrada.png' },
             { text: 'Visitar cada cuarto y empezar con la lavadera de las camas que hayan sido usadas. Tambien de trapos de los baños, etc. Esto es critico ya que es lo que mas tiempo tomara', content: 'lavadora.png' },
             { text: 'Trate de incluir a la lavadora (o hacer una especial) para los trapos que se hayan usado en la limpieza pasada, asi para irlos rotando' },
+            { text: 'Sacar basuras de cuartos, dejar los botes vacios' },
+            { text: 'Al finalizar, tratar de dejar las ventanas, persianas y cortinas cerradas' },
             { text: 'En este gabinete al fondo encontrara esta llave, la cual abre el cuartito de atras donde esta todo lo necesario para la limpieza', content: 'cuartito_key.png' },
             { text: 'En el cuartito de atras tratamos de tener las cosas organizadas, tome todo lo que vaya a requerir y al finalizar regreselas a su lugar por favor', content: 'cuarto_limpieza.png' },
         ]
@@ -46,6 +48,15 @@ const config = [
             { text: 'En todos los baños, rellenar o mantener lo mas lleno posible el jabon de mano liquido - todos estos limpiadores estaran en el cuartito para rellenar', content: 'cuarto_limpieza_2.jpg'},
             { text: 'Dejar un rollo de papel lleno puesto, y otros 2 ya sean dos nuevos o uno nuevo y otro semi nuevo'},
             { text: 'Acomodar los gabinetes de los baños, el baño del cuarto principal tiene varias cosas como botiquin de salud, o qtips - ' },
+        ]
+    },
+    {
+        section_name: 'Oficina', tasks: [
+            { text: 'Ver que monitor este bien, cables esten en orden y ahi (HDMI y luz). Que el jarroncito de tequila este ahi. Que la plantita este bien', content: 'oficina1.jpg'},
+            { text: 'Ver que el burosito este bien, que los libros esten ahi, que el wifi (pegado a la pared) este conectado, que los jarrones y decoraciones esten bien'},
+            { text: 'Ver que ambas canastitas esten bien.', content: 'oficina2.jpg'},
+            { text: 'Verificar que el balcon este cerrado con los dos candados, y que la llave este en su lugar o regresarla (tapa azul)'},
+            { text: 'Verificar que proyector este bien, ver que google cast este ahi, y el control', content: 'oficina3.jpg'}
         ]
     },
 ];
