@@ -4,7 +4,7 @@ const config = [
             { text: 'Busque en google maps: Caseta Real del Sol ii, asi llegara seguro', content: '' },
             { text: 'En la caseta, Hablar con guardia para que los deje pasar, se tendran que bajar a presionar un boton y listo. Direccion es Real de Grijalva 8987', content: '' },
             { text: 'Entre al fracc, dele al fondo, luego giro a la izquierda y al fondo de nuevo. Es la antepenultima casa. Blanca con dos arboles grandes', content: '' },
-            { text: 'Se les enviara un codigo de acceso para la puerta principal de la casa. Solo se podra usar una vez asi que asegurese de dejar una puerta abierta mientras esta ahi. La puerta de enfrente se cierra sola despues de 60 segundos' },
+            { text: 'Se les enviara un codigo de acceso para la puerta principal de la casa. Solo se podra usar una vez asi que asegurese de dejar una puerta abierta mientras esta ahi. La puerta de enfrente se cierra sola despues de 60 segundos de estar cerrada' },
         ]
     },
     { section_name: 'Iniciales', tasks: [
@@ -14,8 +14,13 @@ const config = [
         { text: 'En este gabinete al fondo encontrara esta llave, la cual abre el cuartito de atras donde esta todo lo necesario para la limpieza', content: 'cuartito_key.png' },
         { text: 'En el cuartito de atras tratamos de tener las cosas organizadas, tome todo lo que vaya a requerir y al finalizar regreselas a su lugar por favor', content: 'cuarto_limpieza.png' },
     ] },
-    { section_name: 'Sala', tasks: [] }
-]
+    { section_name: 'Sala', tasks: [
+        { text: 'Limpiar, verificar, que esten bien y que esten en especial: Tele, Google Cast, Control, Decoraciones', content: 'sala_1.png' },
+        { text: 'Limpiar sofa, verificar que no haya manchas o rotaduras en cogines o sofa', content: 'sala_2.png' },
+        { text: 'Mover sofa, y verificar que esta extension este conectada y que tenga ese aparatito conectado', content: 'candado.jpg' },
+        { text: 'Verificar camara que esta en la ventana cerca de la palmera' },
+    ] }
+];
 
 class Tabs extends React.Component {
     componentDidMount() {
@@ -25,55 +30,61 @@ class Tabs extends React.Component {
     render() {
         return(
             <div className="main-tab-div" style={{height: 'auto'}}>
-                <div className="container">
-                    <h5>Hola y gracias por ayudarnos con la limpieza de este AirBNB</h5>
+                <div className="container" style={{textAlign:'center'}}>
+                    <h5>
+                        Hola y gracias por ayudarnos con la limpieza de este AirBNB
+                    </h5>
 
-                    <div className="row">
+                    <div className="row" style={{marginBottom: '3em'}}>
                         <div className="col s8 offset-s2">
-                            <img className="responsive-img" src="/media/airbnb/initial.png" />
+                            <img className="responsive-img" src="/media/airbnb/initial.jpeg" />
                         </div>
                     </div>
+                    <span>*** Asumimos que la casa es limpiada, barrida, trapeada, desinfectada y sacudida en general ***</span>
                 </div>
 
-                <div className="tab">
-                    {
+                <div>
+                    <div className="tab">
+                        {
+                            config.map((con, index) => {
+                                return (
+                                    <button className="tablinks" key={index} 
+                                        onClick={(event) => this.tabClick(event, con.section_name)}
+                                    >
+                                        {con.section_name}
+                                    </button>
+                                )
+                            })
+                        }
+                    </div>
+                    { 
                         config.map((con, index) => {
-                            return (
-                                <button className="tablinks" key={index} 
-                                    onClick={(event) => this.openCity(event, con.section_name)}
-                                >
-                                    {con.section_name}
-                                </button>
+                            return(
+                                <div id={con.section_name} className="tabcontent" key={index}>
+                                    <h4>{con.section_name}</h4>
+                                    {
+                                        con.tasks.map((task, index) => {
+                                            return (
+                                                <div key={index}>
+                                                    <label>
+                                                        <input type="checkbox" />
+                                                        <span style={{height: 'auto', marginBottom: '1em'}}>
+                                                            {task.text}
+                                                        </span>
+                                                    </label>
+                                                    <div>
+                                                        {task.content ? this.renderContent(task.content) : ''}
+                                                    </div>
+                                                </div>
+                                            )
+                                        })
+                                    }
+                                </div>
                             )
-                        })
+                        }) 
                     }
                 </div>
-                { 
-                    config.map((con, index) => {
-                        return(
-                            <div id={con.section_name} className="tabcontent" key={index}>
-                                <h4>{con.section_name}</h4>
-                                {
-                                    con.tasks.map((task, index) => {
-                                        return (
-                                            <div key={index}>
-                                                <label>
-                                                    <input type="checkbox" />
-                                                    <span style={{height: 'auto', marginBottom: '1em'}}>
-                                                        {task.text}
-                                                    </span>
-                                                </label>
-                                                <div>
-                                                    {task.content ? this.renderContent(task.content) : ''}
-                                                </div>
-                                            </div>
-                                        )
-                                    })
-                                }
-                            </div>
-                        )
-                    }) 
-                }
+                
             </div>
         );
     }
@@ -81,14 +92,14 @@ class Tabs extends React.Component {
     renderContent(content) {
         return(
             <div className="row">
-                <div className="col s10 offset-s1">
+                <div className="col m6 offset-m3 s10 offset-s1">
                     <img className="responsive-img" src={`/media/airbnb/${content}`}></img>
                 </div>
             </div>
         )
     }
     
-    openCity(evt, cityName) {
+    tabClick(evt, cityName) {
         // Declare all variables
         var i, tabcontent, tablinks;
       
