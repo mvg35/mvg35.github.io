@@ -1,4 +1,4 @@
-const config = [
+const cleanConfig = [
     {
         section_name: 'Entrada', tasks: [
             { text: 'Busque en google maps: Caseta Real del Sol ii, asi llegara seguro', content: '' },
@@ -10,7 +10,7 @@ const config = [
     {
         section_name: 'Iniciales/Generales', tasks: [
             { text: 'Favor de asegurarse que este la tarjetita escrita y la otra. Favor de decirme si una no esta, la segunda es muy importante', content: 'entrada.png' },
-            { text: 'Visitar cada cuarto y empezar con la lavadera de las camas que hayan sido usadas. Tambien de trapos de los baños, etc. Esto es critico ya que es lo que mas tiempo tomara', content: 'lavadora.png' },
+            { text: 'Visitar cada cuarto y empezar con la lavadera de las camas/sabandas que hayan sido usadas. Tambien las toallas, trapos de los baños, etc. Esto es critico ya que es lo que mas tiempo tomara', content: 'lavadora.png' },
             { text: 'Trate de incluir a la lavadora (o hacer una especial) para los trapos que se hayan usado en la limpieza pasada, asi para irlos rotando' },
             { text: 'Sacar basuras de cuartos, dejar los botes vacios' },
             { text: 'Al finalizar, tratar de dejar las ventanas, persianas y cortinas cerradas' },
@@ -22,7 +22,7 @@ const config = [
         section_name: 'Sala', tasks: [
             { text: 'Limpiar, verificar, que esten bien y que esten en especial: Tele, Google Cast, Control, Decoraciones', content: 'sala_1.png' },
             { text: 'Limpiar sofa, verificar que no haya manchas o rotaduras en cogines o sofa', content: 'sala_2.png' },
-            { text: 'Verificar camara, que este conectada y prendide, esta en la ventana cerca de la palmera' },
+            { text: 'Verificar camara, que este conectada y prendida, esta en la ventana cerca de la palmera' },
             { text: 'Mover sofa, y verificar que esta extension este conectada y que tenga ese aparatito conectado', content: 'candado.jpg' },
         ]
     },
@@ -46,32 +46,68 @@ const config = [
         section_name: 'Banos', tasks: [
             { text: 'En regaderas, favor de rellenar el shampoo y jabón liquido (body wash). No dejar que baje de la mitad. El shampoo es el blanco (el que esta mas cerca a la pared/esquina - izquierdo en regadera 1 y derecho en regadera 2) y el jabon el mas rosado', content: 'banos.jpg'},
             { text: 'En todos los baños, rellenar o mantener lo mas lleno posible el jabon de mano liquido - todos estos limpiadores estaran en el cuartito para rellenar', content: 'cuarto_limpieza_2.jpg'},
-            { text: 'Dejar un rollo de papel lleno puesto, y otros 2 ya sean dos nuevos o uno nuevo y otro semi nuevo'},
+            { text: 'Dejar un rollo de papel lleno puesto - y otros 2 ya sean dos nuevos o uno nuevo y otro semi nuevo - en cada baño'},
             { text: 'Acomodar los gabinetes de los baños, el baño del cuarto principal tiene varias cosas como botiquin de salud, o qtips - ' },
         ]
     },
     {
         section_name: 'Oficina', tasks: [
-            { text: 'Ver que monitor este bien, cables esten en orden y ahi (HDMI y luz). Que el jarroncito de tequila este ahi. Que la plantita este bien', content: 'oficina1.jpg'},
-            { text: 'Ver que el burosito este bien, que los libros esten ahi, que el wifi (pegado a la pared) este conectado, que los jarrones y decoraciones esten bien'},
+            { text: 'Ver que monitor este bien, cables esten en orden y ahi (HDMI y luz). Que el jarroncito de tequila este ahi. Que la plantita este bien. Hacer sillon cama en sillon si es necesario', content: 'oficina1.jpg'},
+            { text: 'Ver que el burosito este bien, que los libros esten ahi, que extension y wifi (pegado al buro) esten prendidos, que los jarrones y decoraciones esten bien y completos'},
             { text: 'Ver que ambas canastitas esten bien.', content: 'oficina2.jpg'},
             { text: 'Verificar que el balcon este cerrado con los dos candados, y que la llave este en su lugar o regresarla (tapa azul)'},
             { text: 'Verificar que proyector este bien, ver que google cast este ahi, y el control', content: 'oficina3.jpg'}
         ]
     },
+    {
+        section_name: 'Salida', tasks: [
+            { text: 'Apagar aire o calefaccion', content: 'calenton.jpeg'},
+            { text: 'Dejar tarjetitas de la entrada en su lugar. Avisarme si no hay una', content: 'tarjetitas.jpeg'},
+            { text: 'Regresar cosas de limpieza al cuartito de atras, cerrarlo, y regresar llave a su lugar inicial', content: 'cuartito_key.png'},
+            { text: 'Mandeme un mesajito diciendo que ya va de salida y porfavor mandeme una reseña del 1-5 de que tan limpio encontro el lugar para calificar al huesped en Airbnb'}
+        ]
+    },
 ];
 
+const bnbConfig = [
+    {
+        section_name: 'Entrada', tasks: [
+            { text: 'Busque en google maps: Caseta Real del Sol ii, asi llegara seguro', content: '' },
+            { text: 'En la caseta, Hablar con guardia para que los deje pasar, se tendran que bajar a presionar un boton y listo. Direccion es Real de Grijalva 8987', content: '' },
+            { text: 'Entre al fracc, dele al fondo, luego giro a la izquierda y al fondo de nuevo. Es la antepenultima casa. Blanca con dos arboles grandes', content: '' },
+            { text: 'Se les enviara un codigo de acceso para la puerta principal de la casa. Este configo les servira durante toda su estadía hasta su hora de checkout. Favor de cerrar las demás puertas' },
+        ]
+    },
+]
+
 class Tabs extends React.Component {
+
+    _cleanPathName = '/clean';
+
+    isCleaning() {
+        return window.location.pathname === this._cleanPathName;
+    }
+
     componentDidMount() {
         document.querySelector('.tablinks').click();
     }
     
     render() {
+        const config = this.isCleaning() ? cleanConfig : bnbConfig;
+        const greetings = this.isCleaning() ?
+        'Hola y gracias por ayudarnos con la limpieza de este AirBNB' :
+        'Hola y bienvenido a su casa por los siguientes días';
+        const warnings = this.isCleaning() ?
+        `
+            Asumimos que la casa es limpiada, barrida, trapeada, desinfectada y sacudida en general | 
+            Favor de avisarme cuando se este acabando un producto - si ya no aguanta otras 3 limpiadas o rellenadas | 
+        ` : `Pagina Bajo construccion, en caso de mas preguntas contactarme | `;
+
         return(
             <div className="main-tab-div">
                 <div className="container" style={{textAlign:'center', marginBottom: '3em'}}>
                     <h5>
-                        Hola y gracias por ayudarnos con la limpieza de este AirBNB
+                        {greetings}
                     </h5>
 
                     <div className="row">
@@ -79,13 +115,13 @@ class Tabs extends React.Component {
                             <img className="responsive-img" src="/media/airbnb/initial.jpeg" />
                         </div>
                     </div>
-                    <span>
-                        *** Asumimos que la casa es limpiada, barrida, trapeada, desinfectada y sacudida en general ***<br/>
-                        *** Favor de avisarme cuando se este acabando un producto - si ya no aguanta otras 3 limpiadas/rellenadas ***
-                    </span>
+                    <p>
+                        { warnings }
+                        Cualquier duda favor de buscarme por WhatsApp al +1 (915) 258-7922
+                    </p>
                 </div>
 
-                <div style={{display:'flex', height: '100vh'}}>
+                <div style={{ display:'flex', height: '100vh', maxHeight: '100vh' }}>
                     <div className="tab">
                         {
                             config.map((con, index) => {

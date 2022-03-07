@@ -2,7 +2,7 @@
     <head>
         <title>La Casita AirBNB</title>
 		<meta charset="utf-8">
-		<meta name="author" content="Miguel Valdez">
+		<meta name="author" content="mvg35">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta property="og:url" content="http://mvg35.github.io" />
 	    <meta property="og:type" content="website" />
@@ -12,23 +12,65 @@
 	    <meta property="og:image:height" content= "600" />
 	    <meta property="og:image:width" content= "600" />
 
-        <link rel="stylesheet" type="text/css" href="/sass/css/new_style.css">
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css">
+
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
         <link rel="icon" type="image/png" href="/media/favicon.ico">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+        <script type="text/babel" src="/scripts/bnb.js"></script>
+
+        <style>
+            * {box-sizing: border-box}
+            /* Style the tab */
+            .tab {
+                border: 1px solid #ccc;
+                background-color: #f1f1f1;
+                flex: 1;
+                height: 100vh;
+            }
+
+            /* Style the buttons that are used to open the tab content */
+            .tab button {
+                display: block;
+                background-color: inherit;
+                color: black;
+                padding: 22px 16px;
+                width: 100%;
+                border: none;
+                outline: none;
+                text-align: left;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+
+            /* Change background color of buttons on hover */
+            .tab button:hover {
+                background-color: #ddd;
+            }
+
+            /* Create an active/current "tab button" class */
+            .tab button.active {
+                background-color: #ccc;
+            }
+
+            .tab-content-div {
+                flex: 4;
+                overflow: scroll;
+                height: 100vh;
+                border: 1px solid #ccc;
+                border-left: none;
+                padding: 0px 12px;
+            }
+        </style>
     </head>
+
     <body>
-        <div style="color: white !important;">
-            <h1 style="color: white !important;">
-                Welcome
-            </h1>
-            <p style="color: white !important;">
-                Pagina bajo construccion<br/>
-                Cualquier duda busqueme en whatsapp al: +1 (915) 258 - 7922
-            </p>
-        </div>
+        <div id="react-div"></div>
     </body>
 </html>
