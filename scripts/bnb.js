@@ -377,7 +377,7 @@ class Tabs extends React.Component {
                     </div>                    
                 </div>
 
-                <div style={{ display:'flex', height: '100vh' }}>
+                <div style={{ display:'flex', height: '100%' }}>
                     <ul id="slide-out" className="sidenav">
                         <div className="user-view">
                             <a href="https://airbnb.com/h/lacasitaconsulado" target="_blank">
