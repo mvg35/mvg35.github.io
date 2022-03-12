@@ -1,5 +1,4 @@
-const cleanConfig = [
-    {
+const cleanConfig = [{
         section_name: ['Entrada'], tasks: [
             {
                 text: [
@@ -19,8 +18,7 @@ const cleanConfig = [
                 ]
             },
         ]
-    },
-    {
+    }, {
         section_name: ['Iniciales/Generales'], tasks: [
             {
                 text: [
@@ -52,8 +50,7 @@ const cleanConfig = [
                 ], content: 'cuarto_limpieza.png'
             },
         ]
-    },
-    {
+    }, {
         section_name: ['Sala'], tasks: [
             {
                 text: [
@@ -73,8 +70,7 @@ const cleanConfig = [
                 ], content: 'candado.jpg'
             },
         ]
-    },
-    {
+    }, {
         section_name: ['Comedor'], tasks: [
             {
                 text: [
@@ -94,16 +90,27 @@ const cleanConfig = [
                 ], content: 'comedor.jpg' 
             },
         ]
-    },
-    // {
-    //     section_name: 'Cocina', tasks: [
-    //         { text: 'Verificar que la camara de la puerta trasera este bien y conectada'},
-    //         { text: 'Verificar que la el centro de mesa tenga lo princial: sal, pimienta, jarroncitos'},
-    //         { text: 'Verificar que la mesa y sillas no tengan algun daño o mancha grave'},
-    //         { text: 'Verificar que esten las 4 decoraciones, 3 patitos', content: 'comedor.jpg' },
-    //     ]
-    // },
-    {
+    }, {
+        section_name: ['Cocina'], tasks: [
+            {
+                text: [
+                    'Verificar que la camara de la puerta trasera este bien y conectada'
+                ]
+            }, {
+                text: [
+                    'Verificar que la el centro de mesa tenga lo princial: sal, pimienta, jarroncitos'
+                ]
+            }, {
+                text: [
+                    'Verificar que la mesa y sillas no tengan algun daño o mancha grave'
+                ]
+            }, {
+                text: [
+                    'Verificar que esten las 4 decoraciones, 3 patitos'
+                ], content: 'comedor.jpg'
+            }
+        ]
+    }, {
         section_name: ['Banos'], tasks: [
             {
                 text: [
@@ -131,8 +138,7 @@ const cleanConfig = [
                 ]
             }
         ]
-    },
-    {
+    }, {
         section_name: ['Oficina'], tasks: [
             {
                 text: [
@@ -156,8 +162,7 @@ const cleanConfig = [
                 ], content: 'oficina3.jpg'
             }
         ]
-    },
-    {
+    }, {
         section_name: ['Salida'], tasks: [
             {
                 text: [
@@ -173,6 +178,10 @@ const cleanConfig = [
                 ], content: 'cuartito_key.png'
             }, {
                 text: [
+                    'Favor de asegurarse que todas las puertas y candados esten cerrados. Tambien las ventanas y persianas. Dejar dos ventanas de baño un poquitito abiertas'
+                ]
+            }, {
+                text: [
                     'Mandeme un mesajito diciendo que ya va de salida y porfavor mandeme una reseña del 1-5 de que tan limpio encontro el lugar para calificar al huesped en Airbnb'
                 ]
             }
@@ -180,69 +189,93 @@ const cleanConfig = [
     },
 ];
 
-const bnbConfig = [
-    {
+const bnbConfig = [{
         section_name: ['Entrada', 'Entrance'], tasks: [
             {
                 text: [
-                    'Busque en google maps: Caseta Real del Sol ii, asi llegara seguro'
+                    'Busque en google maps: Caseta Real del Sol ii, asi llegara seguro',
+                    'Search "Caseta Real Del Sol ii" in google maps, this will surely take you to the private entrance'
                 ], content: ''
             }, {
                 text: [
-                    'En la caseta, Hablar con guardia para que los deje pasar, se tendran que bajar a presionar un boton y listo. Direccion es Real de Grijalva 8987'
+                    'En la caseta, Hablar con guardia para que los deje pasar, se tendran que bajar a presionar un boton y listo. Direccion es Real de Grijalva 8987',
+                    'In the security kiosk, please ask the guard to let you in. Tell him the code is 3987# but there is no one home and you want to press the button. You will go down to press it (through the small door) in coordination with the guard. The gates should open then'
                 ], content: ''
             }, {
                 text: [
-                    'Entre al fracc, dele al fondo, luego giro a la izquierda y al fondo de nuevo. Es la antepenultima casa. Blanca con dos arboles grandes'
+                    'Entre al fracc, dele al fondo, luego giro a la izquierda y al fondo de nuevo. Es la antepenultima casa. Blanca con dos arboles grandes',
+                    'After entering the gate, head straight down, after reaching the end, turn left and continue going straight down. It should be the second to last house, white house with two big trees in the front.'
                 ], content: ''
             }, {
                 text: [
-                    'Se les enviara un codigo de acceso para la puerta principal de la casa. Este configo les servira durante toda su estadía hasta su hora de checkout. Favor de cerrar las demás puertas'
+                    'Se les enviara un codigo de acceso para la puerta principal de la casa antes de su check-in (2:50). Este codigo les servira durante toda su estadía hasta su hora de check-out (10am). Favor de tratar de manternar las otras puertas cerradas y con seguro.',
+                    'You will be receiveng an access code before your check-in which should allow you to open the front door. You will be using this code throughout your stay. Please try to maintain the other doos locked and closed.'
                 ]
             }
         ]
-    },
-    {
-        section_name: ['Cocina', 'Kitchen'], tasks: [
-            {
+    }, {
+        section_name: ['Cocina', 'Kitchen'], tasks: [{
                 text: [
-                    'Aqui estan las cosas en la cocina'
+                    'Aqui estan las cosas en la cocina',
+                    'This is where the different kitchen items are located'
                 ], content: 'cocina.jpg'
             }
         ]
-    },
-    {
-        section_name: ['Sala', 'Living Room'], tasks: [
-            {
+    }, {
+        section_name: ['Sala', 'Living Room'], tasks: [{
                 text: [
                     'Disfrute de la sala. La tele toma ~1 minuto de prenderla en tomar internet para accesar las apps or el google cast. Para el google cast cambie el Input a HDMI 1',
                     'Enjoy the living room. The TV takes ~1 minute from turning it on to detect the wifi in order to access the apps or google cast. Switch the input to HDMI 1 to cast into the tv.'
                 ], content: 'sala.jpg' 
-            },
-            {
+            }, {
                 text: [
                     'Por favor de no desconectar las conecciones detras de la palmera. Uno es de la camara',
                     'Please do not unplug any of the sockets behind the palm tree, one of them is for the outdoor camera'
                 ] 
             }
         ]
-    },
-    {
-        section_name: ['Baños', 'Restroom 1'], tasks: [
-            {
+    }, {
+        section_name: ['Baños', 'Restrooms'], tasks: [{
                 text: [
                     'Shampoo y Jabon estan en la regadera. El Shampoo esta mas pegado a la pared',
                     'You can find Shampoo and Body Wash in the shower. Shampoo is closer to the wall'
                 ], content: 'bano1.jpg' 
-            },
-            {
+            }, {
                 text: [
                     'Shampoo y Jabon de cuerpo',
                     'Shampoo and Body Wash'
                 ], content: 'bano2.jpg' 
             }
         ]
-    },
+    }, {
+        section_name: ['Check-Out', 'Check-Out'], tasks: [{
+                text: [
+                    'Favor de regresar las llaves a su lugar, cerrar candados, apagar aparatos electronicos, reconectar cosas que pudieron haber desconectado',
+                    'Please return any keys you could\'ve used to their original place, close locks, turn off electronics, reconnect anything that couldve been unplugged'
+                ] 
+            }, {
+                text: [
+                    'Favor de dejar las camas que fueron usadas destendidad, esto nos facilitara la tarea de limpieza!',
+                    'Please leave unattended all the beds that where used during your stay. This will make our cleanup process a bit easier'
+                ]
+            }, {
+                text: [
+                    'Favor de apagar el aire acondicionado, calefaccion, o luces.',
+                    'Please turn off the AC, heater system, or any light left.'
+                ]
+            }, {
+                text: [
+                    'Si es posible, mandarme un mensaje de que ya han salido de la casa.',
+                    'If possible, please let me know when you\'ve left the property'
+                ]
+            }, {
+                text: [
+                    'Gracias por tu visita y buen viaje!',
+                    'Thank you for your visit and have a nice trip!'
+                ]
+            }
+        ]
+    }
 ]
 
 class Tabs extends React.Component {
@@ -274,7 +307,7 @@ class Tabs extends React.Component {
         [`
             Asumimos que la casa es limpiada, barrida, trapeada, desinfectada y sacudida en general | 
             Favor de avisarme cuando se este acabando un producto - si ya no aguanta otras 3 limpiadas o rellenadas | 
-        `] : [`Pagina Bajo construccion, en caso de mas preguntas contactarme | `, 'Page under development, any question please contact me | '];
+        `] : [`Pagina Bajo construccion, en caso de alguna otra pregunta favor de contactarme | `, 'Page under development, any question please contact me | '];
 
         const general = [
             'Cualquier duda favor de buscarme por WhatsApp al +1 (915) 258-7922',
