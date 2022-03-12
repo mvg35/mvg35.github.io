@@ -26,7 +26,7 @@ const cleanConfig = [{
                 ], content: 'entrada.png'
             }, {
                 text: [
-                    'Visitar cada cuarto y empezar con la lavadera de las camas/sabandas que hayan sido usadas. Tambien las toallas, trapos de los baños, etc. Esto es critico ya que es lo que mas tiempo tomara'
+                    'Visitar cada cuarto y empezar con la lavadera de las camas/sabanas que hayan sido usadas. Tambien las toallas, trapos de los baños, etc. Esto es critico ya que es lo que mas tiempo tomara'
                 ], content: 'lavadora.png'
             }, {
                 text: [
@@ -34,7 +34,7 @@ const cleanConfig = [{
                 ]
             }, {
                 text: [
-                    'Sacar basuras de cuartos, dejar los botes vacios'
+                    'Sacar basuras de cuartos y baños, dejar los botes vacios'
                 ]
             }, {
                 text: [
@@ -281,7 +281,9 @@ const bnbConfig = [{
 class Tabs extends React.Component {
 
     state = {
-        lang: 0
+        lang: 0,
+        modals: null,
+        sidenavs: null
     }
 
     _cleanPathName = '/clean';
@@ -295,8 +297,21 @@ class Tabs extends React.Component {
     }
 
     componentDidMount() {
-        document.querySelector('.tablinks').click();
+        var modalElems = document.querySelectorAll('.modal');
+        var sidenavElems = document.querySelectorAll('.sidenav');
+
+        this.setState({
+            modals: M.Modal.init(modalElems),
+            sidenavs: M.Sidenav.init(sidenavElems)
+        }, () => {
+            this.state.modals[0].open();
+            this.state.sidenavs[0].open();
+        });
+
+        document.querySelector('.tablinks').children[0].click();
     }
+
+
     
     render() {
         const config = this.isCleaning() ? cleanConfig : bnbConfig;
@@ -307,58 +322,92 @@ class Tabs extends React.Component {
         [`
             Asumimos que la casa es limpiada, barrida, trapeada, desinfectada y sacudida en general | 
             Favor de avisarme cuando se este acabando un producto - si ya no aguanta otras 3 limpiadas o rellenadas | 
-        `] : [`Pagina Bajo construccion, en caso de alguna otra pregunta favor de contactarme | `, 'Page under development, any question please contact me | '];
+        `] : [`Pagina bajo construccion, en caso de alguna otra pregunta favor de contactarme | `, 'Page under development, any question please contact me | '];
 
         const general = [
             'Cualquier duda favor de buscarme por WhatsApp al +1 (915) 258-7922',
             'For any question please message or whatsapp me to (915) 258-7922'
         ]
+        const continua = [
+            'Continuar',
+            'Continue'
+        ]
+        const inicio = [
+            'Inicio',
+            'Start'
+        ]
+
+
 
         return(
             <div className="main-tab-div">
-                <div className="container" style={{textAlign:'center', marginBottom: '3em'}}>
-                    <h5>
-                        {greetings[this.state.lang]}
-                    </h5>
-
-                    <div className="row">
-                        <div className="col s8 offset-s2">
-                            <a href="https://airbnb.com/h/lacasitaconsulado" target="_blank">
-                                <img className="responsive-img" src="/media/airbnb/initial.jpeg" />
+                <div className="container" style={{textAlign:'center'}}>
+                    <div className="modal modal-fixed-footer" style={{height: '80%', maxHeight: '80%'}}>
+                        <div className="modal-content">
+                            <h5>
+                                {greetings[this.state.lang]}
+                            </h5>
+                            <div className="row">
+                                <div className="col s12">
+                                    <a href="https://airbnb.com/h/lacasitaconsulado" target="_blank">
+                                        <img className="responsive-img" src="/media/airbnb/initial.jpeg" />
+                                    </a>
+                                </div>
+                            </div>
+                            <p>
+                                { warnings[this.state.lang] }
+                                { general[this.state.lang] }
+                            </p>
+                            {
+                                this.isCleaning() ?
+                                '' :
+                                <a
+                                    className="waves-effect waves-light btn-small"
+                                    onClick={() => this.handleLanguageClick()}
+                                >
+                                    { this.state.lang ? 'Español' : 'English'}
+                                </a>
+                            }
+                        </div>
+                        <div className="modal-footer">
+                            <a className="modal-close waves-effect waves-green btn-flat">
+                                { continua[this.state.lang] }
                             </a>
                         </div>
-                    </div>
-                    <p>
-                        { warnings[this.state.lang] }
-                        { general[this.state.lang] }
-                    </p>
-                    {
-                        this.isCleaning() ?
-                        '' :
-                        <a
-                            className="waves-effect waves-light btn-small"
-                            onClick={() => this.handleLanguageClick()}
-                        >
-                            { this.state.lang ? 'Español' : 'English'}
-                        </a>
-                    }
-                    
+                    </div>                    
                 </div>
 
-                <div style={{ display:'flex', height: '100vh', maxHeight: '100vh' }}>
-                    <div className="tab">
+                <div style={{ display:'flex', height: '100vh' }}>
+                    <ul id="slide-out" className="sidenav">
+                        <div className="user-view">
+                            <a href="https://airbnb.com/h/lacasitaconsulado" target="_blank">
+                                <img style={{height: '9em'}} className="responsive-img" src="/media/airbnb/logo.jpg" />
+                            </a>
+                        </div>
                         {
                             config.map((con, index) => {
                                 return (
-                                    <button className="tablinks" key={index} 
-                                        onClick={(event) => this.tabClick(event, con.section_name[this.state.lang])}
-                                    >
-                                        {con.section_name[this.state.lang]}
-                                    </button>
+                                    <li key={index} className="tablinks">
+                                        <a className="waves-effect"
+                                            onClick={(event) => this.tabClick(event, con.section_name[this.state.lang])}
+                                        >
+                                            {con.section_name[this.state.lang]}
+                                        </a>
+                                    </li>
                                 )
                             })
                         }
-                    </div>
+                        <li style={{marginTop:'2em'}}>
+                            <a className="waves-effect"onClick={() => this.state.modals[0].open()} style={{color:'gray'}} >
+                                {inicio[this.state.lang]}
+                            </a>
+                        </li>
+                    </ul>
+                    <a data-target="slide-out" className="sidenav-trigger btn-floating btn-large waves-effect waves-light red" style={{marginTop: '1em', marginLeft: '.6em'}} >
+                        <i className="material-icons">menu</i>
+                    </a>
+                    {/* <a data-target="slide-out" className="sidenav-trigger"><i class="material-icons">menu</i></a> */}
+
                     <div className="tab-content-div">
                         { 
                             config.map((con, index) => {
@@ -425,7 +474,7 @@ class Tabs extends React.Component {
       
         // Show the current tab, and add an "active" class to the link that opened the tab
         document.getElementById(cityName).style.display = "block";
-        evt.currentTarget.className += " active";
+        evt.currentTarget.parentElement.className += " active";
     }
 }
 
