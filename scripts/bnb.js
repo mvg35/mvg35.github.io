@@ -251,18 +251,18 @@ const bnbConfig = [{
         section_name: ['Check-Out', 'Check-Out'], tasks: [{
                 text: [
                     'Favor de regresar las llaves a su lugar, cerrar candados, apagar aparatos electronicos, reconectar cosas que pudieron haber desconectado',
-                    'Please return any keys you could\'ve used to their original place, close locks, turn off electronics, reconnect anything that couldve been unplugged'
-                ] 
+                    'Please return any keys you could\'ve used to their original place, including the gate\'s card, lock external locks, turn off electronics, reconnect anything that couldve been unplugged'
+                ], content: 'tarjetitas.jpeg'
             }, {
                 text: [
                     'Favor de dejar las camas que fueron usadas destendidad, esto nos facilitara la tarea de limpieza!',
                     'Please leave unattended all the beds that where used during your stay. This will make our cleanup process a bit easier'
-                ]
+                ], content: 'oficina2.jpg'
             }, {
                 text: [
                     'Favor de apagar el aire acondicionado, calefaccion, o luces.',
                     'Please turn off the AC, heater system, or any light left.'
-                ]
+                ], content: 'calenton.jpeg'
             }, {
                 text: [
                     'Si es posible, mandarme un mensaje de que ya han salido de la casa.',
