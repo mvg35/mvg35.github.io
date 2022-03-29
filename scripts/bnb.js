@@ -193,70 +193,75 @@ const bnbConfig = [{
         section_name: ['Entrada', 'Entrance'], tasks: [
             {
                 text: [
-                    'Busque en google maps: Caseta Real del Sol ii, asi llegara seguro',
-                    'Search "Caseta Real Del Sol ii" in google maps, this will surely take you to the private entrance'
-                ], content: ''
+                    'Busque en google maps: Caseta Real del Sol ii, asi llegara seguro.',
+                    'Search "Caseta Real Del Sol ii" in Google Maps, this will surely take you to the private entrance.'
+                ], content: 'maps.png'
             }, {
                 text: [
-                    'En la caseta, Hablar con guardia para que los deje pasar, se tendran que bajar a presionar un boton y listo. Direccion es Real de Grijalva 8987',
-                    'In the security kiosk, please ask the guard to let you in. Tell him the code is 3987# but there is no one home and you want to press the button. You will go down to press it (through the small door) in coordination with the guard. The gates should open then'
-                ], content: ''
+                    'Se les enviara un codigo que se usara para abrir la reja del fraccionamiento solo por el primer dia. Direccion es Real de Grijalva 8987.',
+                    'We will send you a code that will open the community\'s gate for your first day only.'
+                ]
             }, {
                 text: [
-                    'Entre al fracc, dele al fondo, luego giro a la izquierda y al fondo de nuevo. Es la antepenultima casa. Blanca con dos arboles grandes',
+                    'Entre al fracc, dele al fondo, luego giro a la izquierda y al fondo de nuevo. Es la antepenultima casa. Blanca con dos arboles grandes.',
                     'After entering the gate, head straight down, after reaching the end, turn left and continue going straight down. It should be the second to last house, white house with two big trees in the front.'
-                ], content: ''
+                ]
             }, {
                 text: [
                     'Se les enviara un codigo de acceso para la puerta principal de la casa antes de su check-in (2:50). Este codigo les servira durante toda su estadía hasta su hora de check-out (10am). Favor de tratar de manternar las otras puertas cerradas y con seguro.',
-                    'You will be receiveng an access code before your check-in which should allow you to open the front door. You will be using this code throughout your stay. Please try to maintain the other doos locked and closed.'
+                    'You will be receiveng an access code before your check-in which should allow you to open the front door. You will be using this code throughout your stay. Please try to maintain the other doors closed and locked.'
+                ]
+            }, {
+                text: [
+                    'Al entrar vera una tarjetita, esta le servira para abrir la reja de la entrada en vez del codigo por el resto de su estadia.',
+                    'You should see a small card right after entering which will serve you to open the front gate for the rest of your stay.'
                 ]
             }
         ]
     }, {
         section_name: ['Cocina', 'Kitchen'], tasks: [{
                 text: [
-                    'Aqui estan las cosas en la cocina',
-                    'This is where the different kitchen items are located'
+                    'Aqui estan las cosas en la cocina.',
+                    'This is where the different kitchen items are located at.'
                 ], content: 'cocina.jpg'
             }
         ]
     }, {
         section_name: ['Sala', 'Living Room'], tasks: [{
                 text: [
-                    'Disfrute de la sala. La tele toma ~1 minuto de prenderla en tomar internet para accesar las apps or el google cast. Para el google cast cambie el Input a HDMI 1',
-                    'Enjoy the living room. The TV takes ~1 minute from turning it on to detect the wifi in order to access the apps or google cast. Switch the input to HDMI 1 to cast into the tv.'
+                    'Disfrute de la sala. La tele toma ~1 minuto de prenderla en tomar internet para accesar las apps or el google cast. Para el google cast cambie el Input a HDMI 1.',
+                    'Enjoy the living room. The TV takes ~1 minute from turning it on to detect the wifi in order to access the apps or google cast. Switch the input to HDMI 1 to cast into the TV.'
                 ], content: 'sala.jpg' 
             }, {
                 text: [
-                    'Por favor de no desconectar las conecciones detras de la palmera. Uno es de la camara',
-                    'Please do not unplug any of the sockets behind the palm tree, one of them is for the outdoor camera'
-                ] 
+                    'Por favor de no desconectar las conecciones detras de la palmera. Uno es de la camara.',
+                    'Please do not unplug any of the sockets behind the palm tree, one of them is for the outdoor camera.'
+                ]
             }
         ]
     }, {
         section_name: ['Baños', 'Restrooms'], tasks: [{
                 text: [
-                    'Shampoo y Jabon estan en la regadera. El Shampoo esta mas pegado a la pared',
-                    'You can find Shampoo and Body Wash in the shower. Shampoo is closer to the wall'
+                    'Shampoo y Jabon estan en la regadera. El Shampoo esta mas pegado a la pared.',
+                    'You can find Shampoo and Body Wash in the shower. Shampoo is closer to the wall.'
                 ], content: 'bano1.jpg' 
             }, {
                 text: [
-                    'Shampoo y Jabon de cuerpo',
-                    'Shampoo and Body Wash'
+                    'Shampoo y Jabon de cuerpo.',
+                    'Shampoo and Body Wash.'
                 ], content: 'bano2.jpg' 
             }
         ]
     }, {
         section_name: ['Check-Out', 'Check-Out'], tasks: [{
                 text: [
-                    'Favor de regresar las llaves a su lugar, cerrar candados, apagar aparatos electronicos, reconectar cosas que pudieron haber desconectado',
-                    'Please return any keys you could\'ve used to their original place, including the gate\'s card, lock external locks, turn off electronics, reconnect anything that couldve been unplugged'
+                    'Favor de regresar las llaves a su lugar, cerrar candados, apagar aparatos electronicos, reconectar cosas que pudieron haber desconectado.',
+                    'Please return any keys you could\'ve used to their original place, including the gate\'s card, lock external locks, turn off electronics, reconnect anything that couldve been unplugged.'
                 ], content: 'tarjetitas.jpeg'
             }, {
                 text: [
                     'Favor de dejar las camas que fueron usadas destendidad, esto nos facilitara la tarea de limpieza!',
-                    'Please leave unattended all the beds that where used during your stay. This will make our cleanup process a bit easier'
+                    'Please leave unattended all the beds that where used during your stay. This will make our cleanup process a bit easier.'
                 ], content: 'oficina2.jpg'
             }, {
                 text: [
@@ -266,7 +271,7 @@ const bnbConfig = [{
             }, {
                 text: [
                     'Si es posible, mandarme un mensaje de que ya han salido de la casa.',
-                    'If possible, please let me know when you\'ve left the property'
+                    'If possible, please let me know when you\'ve left the property.'
                 ]
             }, {
                 text: [
@@ -475,6 +480,9 @@ class Tabs extends React.Component {
         // Show the current tab, and add an "active" class to the link that opened the tab
         document.getElementById(cityName).style.display = "block";
         evt.currentTarget.parentElement.className += " active";
+        if (this.state.sidenavs) {
+            this.state.sidenavs[0].close();
+        }
     }
 }
 
