@@ -260,9 +260,19 @@ const bnbConfig = [{
                 ], content: 'tarjetitas.jpeg'
             }, {
                 text: [
+                    'Favor de regresar las llaves del balcon a su lugar original.',
+                    'Please return the balcony\'s key back to its original place.'
+                ], content: 'oficina2.jpg'
+            }, {
+                text: [
                     'Favor de dejar las camas que fueron usadas destendidad, esto nos facilitara la tarea de limpieza!',
                     'Please leave unattended all the beds that where used during your stay. This will make our cleanup process a bit easier.'
-                ], content: 'oficina2.jpg'
+                ]
+            }, {
+                text: [
+                    'Favor de limpiar y ordenar un poco las areas que se usaron. Recoger basuras.',
+                    'Please pick up after yourself.'
+                ]
             }, {
                 text: [
                     'Favor de apagar el aire acondicionado, calefaccion, o luces.',
