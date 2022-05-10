@@ -198,24 +198,29 @@ const bnbConfig = [{
                 ], content: 'maps.png'
             }, {
                 text: [
-                    'Se les enviara un codigo que se usara para abrir la reja del fraccionamiento solo por el primer dia. Direccion es Real de Grijalva 8987.',
-                    'We will send you a code that will open the community\'s gate for your first day only.'
+                    'Se les enviara un codigo QR que se usara para abrir la reja del fraccionamiento solo la primera entrada. Direccion es Real de Grijalva 8987.',
+                    'We will send you a QR code that will open the community\'s gate for your entrance day only.'
                 ]
             }, {
                 text: [
-                    'Entre al fracc, dele al fondo, luego giro a la izquierda y al fondo de nuevo. Es la antepenultima casa. Blanca con dos arboles grandes.',
+                    'Entre al fracc, dele al fondo, luego giro a la izquierda y al fondo de nuevo, es la casa antepenultima. Blanca con dos arboles grandes.',
                     'After entering the gate, head straight down, after reaching the end, turn left and continue going straight down. It should be the second to last house, white house with two big trees in the front.'
                 ]
             }, {
                 text: [
-                    'Se les enviara un codigo de acceso para la puerta principal de la casa antes de su check-in (2:50). Este codigo les servira durante toda su estadía hasta su hora de check-out (10am). Favor de tratar de manternar las otras puertas cerradas y con seguro.',
-                    'You will be receiveng an access code before your check-in which should allow you to open the front door. You will be using this code throughout your stay. Please try to maintain the other doors closed and locked.'
+                    'Se les enviara un codigo de acceso para la puerta principal de la casa antes de su check-in (2:50pm). Este codigo les servira durante toda su estadía hasta su hora de check-out (10:00am). Favor de tratar de manternar las otras puertas cerradas y con seguro.',
+                    'You will be receiveng an access code before your check-in (2:50pm) which should allow you to open the front door. You will be using this code throughout your stay until your check-out (10:00am). Please try to maintain the other doors closed and locked.'
+                ], content: ['keypad_esp.png', 'keypad.png']
+            }, {
+                text: [
+                    'Al entrar vera una tarjetita, esta le servira para abrir la reja del fraccionamiento en vez del codigo QR por el resto de su estadia.',
+                    'You should see a small card right after entering which will serve you to open the front gate for the rest of your stay.'
                 ]
             }, {
                 text: [
-                    'Al entrar vera una tarjetita, esta le servira para abrir la reja de la entrada en vez del codigo por el resto de su estadia.',
-                    'You should see a small card right after entering which will serve you to open the front gate for the rest of your stay.'
-                ]
+                    'En tiempo de frio el blanco de arriba es la calefaccion. En tiempo de calor, el aire acondicionado es el control amarillo de abajo. Favor de mantener el otro apagado.',
+                    'During cold seasons the upper white controller is for the Heater. During warm season, the bottom yellow control is for the AC. Please leave the other one off.'
+                ], content: 'air.jpg'
             }
         ]
     }, {
@@ -462,10 +467,11 @@ class Tabs extends React.Component {
     }
 
     renderContent(content) {
+        const image = Array.isArray(content) ? content[this.state.lang] : content;
         return(
             <div className="row">
                 <div className="col m6 offset-m3 s10 offset-s1">
-                    <img className="responsive-img" src={`/media/airbnb/${content}`}></img>
+                    <img className="responsive-img" src={`/media/airbnb/${image}`}></img>
                 </div>
             </div>
         )
