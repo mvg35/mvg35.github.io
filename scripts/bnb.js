@@ -1,20 +1,20 @@
-const cleanConfig = [{
+const cleaningConfig = [{
         section_name: ['Entrada'], tasks: [
             {
                 text: [
-                    'Busque en google maps: Caseta Real del Sol ii, asi llegara seguro'
+                    'Para encontrar la entrada del fraccionamiento, busque en google maps: Caseta Real del Sol ii.'
                 ]
             }, {
                 text: [
-                    'En la caseta, Hablar con guardia para que los deje pasar, se tendran que bajar a presionar un boton y listo. Direccion es Real de Grijalva 8987'
+                    'Recibiran un codigo QR que abre la reja del fraccionamiento. Dirección es Real de Grijalva 8987.'
                 ]
             }, {
                 text: [
-                    'Entre al fracc, dele al fondo, luego giro a la izquierda y al fondo de nuevo. Es la antepenultima casa. Blanca con dos arboles grandes'
+                    'Entre al fraccionamiento, de  un giro a la izquierda, seguido por uno a la derecha, y siga hasta el fondo. Es la casa que se ve hasta el final, blanca con dos arboles grandes.'
                 ]
             }, {
                 text: [
-                    'Se les enviara un codigo de acceso para la puerta principal de la casa. Solo se podra usar una vez asi que asegurese de dejar una puerta abierta mientras esta ahi. La puerta de enfrente se cierra sola despues de 60 segundos de estar cerrada'
+                    'Recibiran un codigo de acceso para la puerta principal de la casa.'
                 ]
             },
         ]
@@ -22,7 +22,7 @@ const cleanConfig = [{
         section_name: ['Iniciales/Generales'], tasks: [
             {
                 text: [
-                    'Favor de asegurarse que este la tarjetita escrita y la otra. Favor de decirme si una no esta, la segunda es muy importante'
+                    'Favor de asegurarse que este la tarjetita blanca. Favor de decirme no esta, es muy importante'
                 ], content: 'entrada.png'
             }, {
                 text: [
@@ -193,35 +193,45 @@ const bnbConfig = [{
         section_name: ['Entrada', 'Entrance'], tasks: [
             {
                 text: [
-                    'Busque en google maps: Caseta Real del Sol ii, asi llegara seguro.',
-                    'Search "Caseta Real Del Sol ii" in Google Maps, this will surely take you to the private entrance.'
+                    'Para encontrar la entrada del fraccionamiento, busque en google maps "Caseta Real del Sol ii."',
+                    'To find the community\'s entrance, Search "Caseta Real Del Sol ii" in Google Maps.'
                 ], content: 'maps.png'
             }, {
                 text: [
-                    'Se les enviara un codigo QR que se usara para abrir la reja del fraccionamiento solo la primera entrada. Direccion es Real de Grijalva 8987.',
+                    'Recibirán un código QR que abre la reja del fraccionamiento solo las primeras entradas. Dirección es Real de Grijalva 8987.',
                     'We will send you a QR code that will open the community\'s gate for your entrance day only.'
                 ]
             }, {
                 text: [
-                    'Entre al fracc, dele al fondo, luego giro a la izquierda y al fondo de nuevo, es la casa antepenultima. Blanca con dos arboles grandes.',
-                    'After entering the gate, head straight down, after reaching the end, turn left and continue going straight down. It should be the second to last house, white house with two big trees in the front.'
-                ]
+                    'Entre al fraccionamiento, de un giro a la izquierda, seguido por uno a la derecha, y siga hasta el fondo. Es la casa que se ve hasta el final, blanca con dos arboles grandes.',
+                    'After entering the gate, turn left instantly, followed by a right turn, then keep going straight down the street. It\'s the house that\'s down the road, white house with two big trees.'
+                ], content: 'view.jpeg'
             }, {
                 text: [
-                    'Se les enviara un codigo de acceso para la puerta principal de la casa antes de su check-in (2:50pm). Este codigo les servira durante toda su estadía hasta su hora de check-out (10:00am). Favor de tratar de manternar las otras puertas cerradas y con seguro.',
-                    'You will be receiveng an access code before your check-in (2:50pm) which should allow you to open the front door. You will be using this code throughout your stay until your check-out (10:00am). Please try to maintain the other doors closed and locked.'
+                    'Recibiran un código de acceso para la puerta principal de la casa antes de su entrada (2:50pm). Este código les servira durante toda su estadía hasta su hora de salida(10:00am). Favor de tratar de manternar las otras puertas cerradas y con seguro.',
+                    'You will be receiveng an access code before your check-in (2:50pm) which should open the house\'s front door. You will be using this code throughout your stay until your check-out (10:00am). Please try to maintain the other doors closed and locked.'
                 ], content: ['keypad_esp.png', 'keypad.png']
             }, {
                 text: [
-                    'Al entrar vera una tarjetita, esta le servira para abrir la reja del fraccionamiento en vez del codigo QR por el resto de su estadia.',
-                    'You should see a small card right after entering which will serve you to open the front gate for the rest of your stay.'
+                    'Al entrar vera una tarjeta blanca, esta le servira para abrir la reja del fraccionamiento en vez del código QR por el resto de su estadia. FAVOR DE CUIDARLA YA QUE SE LES TENDRA QUE COBRAR EN CASO DE SER EXTRAVIADA',
+                    'You should see a small white card right after entering, which will serve you to open the front gate for the rest of your stay. PLEASE TAKE CARE OF IT SINCE WE WILL HAVE TO CHARGE YOU IN CASE IT GETS LOST'
                 ]
             }, {
                 text: [
-                    'En tiempo de frio el blanco de arriba es la calefaccion. En tiempo de calor, el aire acondicionado es el control amarillo de abajo. Favor de mantener el otro apagado.',
-                    'During cold seasons the upper white controller is for the Heater. During warm season, the bottom yellow control is for the AC. Please leave the other one off.'
+                    'La calefaccion es el control blanco de arriba. El aire acondicionado es el control amarillo de abajo. El aire esta desabilitado en invierno y vice versa',
+                    'You can control the heater with the upper white controller. The AC is controlled with the bottom yellow controller. The AC is disabled during winter and vice-versa.'
                 ], content: 'air.jpg'
-            }
+            }, {
+              text: [
+                  'El fraccionamiento cuenta con una puerta peatonal, la cual usa un codigo de 6 digitos para entrar que cambian cada día. Si lo requiere, favor de pedirmelo. Tambien se usa en caso de Uber o UberEats.',
+                  'The community\;s gate also counts with a pedestrian door, which uses a 6 digits code that changes every day. If you require it, please ask me for it. This code is also used for Uber or UberEats.'
+              ]
+            }, {
+              text: [
+                  'WIFI: INFINITUM1BA2_2.4 | Contraseña: W27cgBX3M9',
+                  'WIFI: INFINITUM1BA2_2.4 | Password: W27cgBX3M9'
+              ]
+            }            
         ]
     }, {
         section_name: ['Cocina', 'Kitchen'], tasks: [{
@@ -260,9 +270,9 @@ const bnbConfig = [{
     }, {
         section_name: ['Check-Out', 'Check-Out'], tasks: [{
                 text: [
-                    'Favor de regresar las llaves a su lugar, cerrar candados, apagar aparatos electronicos, reconectar cosas que pudieron haber desconectado.',
-                    'Please return any keys you could\'ve used to their original place, including the gate\'s card, lock external locks, turn off electronics, reconnect anything that couldve been unplugged.'
-                ], content: 'tarjetitas.jpeg'
+                    'Favor de regresar las llaves a su lugar, cerrar puertas, ventanas, candados, apagar aparatos electronicos, conectar cosas que pudieron haber desconectado.',
+                    'Please return any keys you could\'ve used to their original place, including the gate\'s card, close doors, close windows, lock external locks, turn off electronics, plug anything that couldve been unplugged.'
+                ], content: 'entrada.png'
             }, {
                 text: [
                     'Favor de regresar las llaves del balcon a su lugar original.',
@@ -334,7 +344,7 @@ class Tabs extends React.Component {
 
     
     render() {
-        const config = this.isCleaning() ? cleanConfig : bnbConfig;
+        const config = this.isCleaning() ? cleaningConfig : bnbConfig;
         const greetings = this.isCleaning() ?
         ['Hola y gracias por ayudarnos con la limpieza de este AirBNB'] :
         ['Hola y bienvenido a su casa por los siguientes días', 'Hello and welcome to your home for the following days'];
@@ -342,7 +352,7 @@ class Tabs extends React.Component {
         [`
             Asumimos que la casa es limpiada, barrida, trapeada, desinfectada y sacudida en general | 
             Favor de avisarme cuando se este acabando un producto - si ya no aguanta otras 3 limpiadas o rellenadas | 
-        `] : [`Pagina bajo construccion, en caso de alguna otra pregunta favor de contactarme | `, 'Page under development, any question please contact me | '];
+        `] : ['', ''];
 
         const general = [
             'Cualquier duda favor de buscarme por WhatsApp al +1 (915) 258-7922',
