@@ -303,7 +303,12 @@ const bnbConfig = [{
                     'Gracias por tu visita y buen viaje!',
                     'Thank you for your visit and have a nice trip!'
                 ]
-            }
+            }, {
+              text: [
+                  'Por favor no olvide dejarnos un review en Airbnb si su estadia fue de su agrado, nos ayudara mucho!',
+                  'Please don\'t forger to leave a review if you had an awesome stay, it will be very helpful!'
+              ]
+          }
         ]
     }
 ]
