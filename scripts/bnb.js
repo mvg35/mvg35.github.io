@@ -41,6 +41,10 @@ const cleaningConfig = [{
       ], content: 'lavadora.png'
     }, {
       text: [
+        'Son dos camas queens, favor de cambiar sabanas/colcha/funda de las que fuero usadas y ponerle limpias. Las limpias deberan de estar en el armario del cuarto principal'
+      ]
+    }, {
+      text: [
         'Trate de incluir a la lavadora (o hacer una especial) para los trapos que se hayan usado en la limpieza pasada, asi para irlos rotando'
       ]
     }, {
