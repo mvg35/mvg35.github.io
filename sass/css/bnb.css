@@ -15,6 +15,10 @@
     position: relative;
 }
 
+.active {
+  background-color: #cfa9a90d !important;
+}
+
 .tabcontent::-webkit-scrollbar {
     display:none;
 }

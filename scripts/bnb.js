@@ -197,7 +197,7 @@ const cleaningConfig = [{
 ];
 
 const bnbConfig = [{
-        section_name: ['Entrada', 'Entrance'], tasks: [
+        section_name: ['Entrada', 'Entrance'], url:'entrada', tasks: [
             {
                 text: [
                     'Para encontrar la entrada del fraccionamiento, busque en google maps "Caseta Real del Sol ii."',
@@ -215,8 +215,8 @@ const bnbConfig = [{
                 ], content: 'view.jpeg'
             }, {
                 text: [
-                    'Recibiran un código de acceso para la puerta principal de la casa antes de su entrada (2:50pm). Este código les servira durante toda su estadía hasta su hora de salida(10:00am). Favor de tratar de manternar las otras puertas cerradas y con seguro.',
-                    'You will be receiveng an access code before your check-in (2:50pm) which should open the house\'s front door. You will be using this code throughout your stay until your check-out (10:00am). Please try to maintain the other doors closed and locked.'
+                    'Recibiran un código de acceso para la puerta principal de la casa antes de su entrada (3:50pm). Este código les servira durante toda su estadía hasta su hora de salida (11:00am). Favor de tratar de manternar las otras puertas cerradas y con seguro.',
+                    'You will be receiveng an access code before your check-in (3:50pm) which should open the house\'s front door. You will be using this code throughout your stay until your check-out (11:00am). Please try to maintain the other doors closed and locked.'
                 ], content: ['keypad_esp.png', 'keypad.png']
             }, {
                 text: [
@@ -241,7 +241,7 @@ const bnbConfig = [{
             }            
         ]
     }, {
-        section_name: ['Cocina', 'Kitchen'], tasks: [{
+        section_name: ['Cocina', 'Kitchen'], url:'cocina', tasks: [{
                 text: [
                     'Aqui estan las cosas en la cocina.',
                     'This is where the different kitchen items are located at.'
@@ -249,7 +249,7 @@ const bnbConfig = [{
             }
         ]
     }, {
-        section_name: ['Sala', 'Living Room'], tasks: [{
+        section_name: ['Sala', 'Living Room'], url:'sala', tasks: [{
                 text: [
                     'Disfrute de la sala. La tele toma ~1 minuto de prenderla en tomar internet para accesar las apps or el google cast. Para el google cast cambie el Input a HDMI 1.',
                     'Enjoy the living room. The TV takes ~1 minute from turning it on to detect the wifi in order to access the apps or google cast. Switch the input to HDMI 1 to cast into the TV.'
@@ -262,7 +262,7 @@ const bnbConfig = [{
             }
         ]
     }, {
-        section_name: ['Baños', 'Restrooms'], tasks: [{
+        section_name: ['Baños', 'Restrooms'], url:'bano', tasks: [{
                 text: [
                     'Shampoo y Jabon estan en la regadera. El Shampoo esta mas pegado a la pared.',
                     'You can find Shampoo and Body Wash in the shower. Shampoo is closer to the wall.'
@@ -275,7 +275,7 @@ const bnbConfig = [{
             }
         ]
     }, {
-        section_name: ['Check-Out', 'Check-Out'], tasks: [{
+        section_name: ['Check-Out', 'Check-Out'], url:'check-out', tasks: [{
                 text: [
                     'Favor de regresar las llaves a su lugar, cerrar puertas, ventanas, candados, apagar aparatos electronicos, conectar cosas que pudieron haber desconectado.',
                     'Please return any keys you could\'ve used to their original place, including the gate\'s card, close doors, close windows, lock external locks, turn off electronics, plug anything that couldve been unplugged.'
@@ -320,6 +320,9 @@ const bnbConfig = [{
     }
 ]
 
+
+const _sitesUrl = 'https://mvg35.github.io/bnb';
+
 class Tabs extends React.Component {
 
   state = {
@@ -331,7 +334,7 @@ class Tabs extends React.Component {
   _cleanPathName = '/clean';
 
   isCleaning() {
-      return window.location.pathname === this._cleanPathName;
+    return window.location.pathname === this._cleanPathName;
   }
 
   handleLanguageClick() {
@@ -342,15 +345,21 @@ class Tabs extends React.Component {
       var modalElems = document.querySelectorAll('.modal');
       var sidenavElems = document.querySelectorAll('.sidenav');
 
+      document.querySelector('.tablinks').children[0].click();
+
       this.setState({
           modals: M.Modal.init(modalElems),
           sidenavs: M.Sidenav.init(sidenavElems)
       }, () => {
-          this.state.modals[0].open();
           this.state.sidenavs[0].open();
+          const location = window.location.href;
+          if (location.indexOf("#") > -1) {
+            const reg = location.substring(location.indexOf('#') + 9, location.length);
+            document.querySelectorAll('.tablinks a')[String(reg)].click();
+          } else {
+            this.state.modals[0].open();
+          }
       });
-
-      document.querySelector('.tablinks').children[0].click();
   }
 
 
@@ -420,31 +429,36 @@ class Tabs extends React.Component {
               </div>
 
               <div style={{ display:'flex', height: '100%' }}>
-                  <ul id="slide-out" className="sidenav">
-                      <div className="user-view">
-                          <a href="https://airbnb.com/h/lacasitaconsulado" target="_blank">
-                              <img style={{height: '9em'}} className="responsive-img" src="/media/airbnb/logo.jpg" />
+                <ul id="slide-out" className="sidenav">
+                  <div className="user-view">
+                    <a href="https://airbnb.com/h/lacasitaconsulado" target="_blank">
+                      <img 
+                        style={{height: '9em', marginBottom: '2em'}} 
+                        className="responsive-img" 
+                        src="/media/airbnb/logo.jpg"
+                      />
+                    </a>
+                  </div>
+                  {
+                    config.map((con, index) => {
+                      return (
+                        <li key={index} className="tablinks">
+                          <a className="waves-effect"
+                            id={ 'section-' + index }
+                            onClick={(event) => this.tabClick(event, con.section_name[this.state.lang])}
+                          >
+                            {con.section_name[this.state.lang]}
                           </a>
-                      </div>
-                      {
-                          config.map((con, index) => {
-                              return (
-                                  <li key={index} className="tablinks">
-                                      <a className="waves-effect"
-                                          onClick={(event) => this.tabClick(event, con.section_name[this.state.lang])}
-                                      >
-                                          {con.section_name[this.state.lang]}
-                                      </a>
-                                  </li>
-                              )
-                          })
-                      }
-                      <li style={{marginTop:'2em'}}>
-                          <a className="waves-effect"onClick={() => this.state.modals[0].open()} style={{color:'gray'}} >
-                              {inicio[this.state.lang]}
-                          </a>
-                      </li>
-                  </ul>
+                        </li>
+                      )
+                    })
+                  }
+                  <li style={{marginTop:'2em'}}>
+                    <a className="waves-effect"onClick={() => this.state.modals[0].open()} style={{color:'gray'}} >
+                      {inicio[this.state.lang]}
+                    </a>
+                  </li>
+                </ul>
                   <a data-target="slide-out" className="sidenav-trigger btn-floating btn-large waves-effect waves-light red" style={{marginTop: '1em', marginLeft: '.6em'}} >
                       <i className="material-icons">menu</i>
                   </a>
@@ -498,10 +512,10 @@ class Tabs extends React.Component {
           </div>
       )
   }
-  
-  tabClick(evt, cityName) {
+
+  tabClick(event, sectionName) {
     // Declare all variables
-    var i, tabcontent, tablinks;
+    let i, tabcontent, tablinks;
   
     // Get all elements with class="tabcontent" and hide them
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -514,12 +528,16 @@ class Tabs extends React.Component {
     for (i = 0; i < tablinks.length; i++) {
       tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
+    //window.location.search = `#${sectionName}`;
   
     // Show the current tab, and add an "active" class to the link that opened the tab
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.parentElement.className += " active";
+    document.getElementById(sectionName).style.display = "block";
+    event.currentTarget.parentElement.className += " active";
     if (this.state.sidenavs) {
-        this.state.sidenavs[0].close();
+      const that = this;
+      setTimeout(() => {
+        that.state.sidenavs[0].close();
+      }, 500);   
     }
   }
 }
