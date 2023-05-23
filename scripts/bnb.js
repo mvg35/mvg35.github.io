@@ -292,7 +292,7 @@ const bnbConfig = [{
                 ], content: 'oficina2.jpg'
             }, {
                 text: [
-                    'Favor de dejar las camas que fueron usadas destendidad, esto nos facilitara la tarea de limpieza!',
+                    'Favor de dejar las camas que fueron usadas destendidas, esto nos facilitara la tarea de limpieza!',
                     'Please leave unattended all the beds that where used during your stay. This will make our cleanup process a bit easier.'
                 ]
             }, {
