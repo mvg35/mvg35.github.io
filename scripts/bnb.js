@@ -264,6 +264,11 @@ const bnbConfig = [{
     }, {
         section_name: ['Baños', 'Restrooms'], url:'bano', tasks: [{
                 text: [
+                    'Favor de tirar el papel de baño al inodoro, no al bote de basura. Moderadamente.',
+                    'Please dispose of TP in the toilet, not the trash can. Moderately.'
+                ]
+            },{
+                text: [
                     'Shampoo y Jabon estan en la regadera. El Shampoo esta mas pegado a la pared.',
                     'You can find Shampoo and Body Wash in the shower. Shampoo is closer to the wall.'
                 ], content: 'bano1.jpg' 
@@ -401,7 +406,11 @@ class Tabs extends React.Component {
                           <div className="row">
                               <div className="col s12">
                                   <a href="https://airbnb.com/h/lacasitaconsulado" target="_blank">
-                                      <img className="responsive-img" src="/media/airbnb/initial.jpeg" />
+                                      <img 
+                                        style={{width:'60%'}} 
+                                        className="responsive-img" 
+                                        src="/media/airbnb/initial.jpeg" 
+                                      />
                                   </a>
                               </div>
                           </div>
@@ -428,7 +437,7 @@ class Tabs extends React.Component {
                   </div>                    
               </div>
 
-              <div style={{ display:'flex', height: '100%' }}>
+              <div style={{ height: '100%' }}>
                 <ul id="slide-out" className="sidenav">
                   <div className="user-view">
                     <a href="https://airbnb.com/h/lacasitaconsulado" target="_blank">
@@ -459,11 +468,15 @@ class Tabs extends React.Component {
                     </a>
                   </li>
                 </ul>
-                  <a data-target="slide-out" className="sidenav-trigger btn-floating btn-large waves-effect waves-light red" style={{marginTop: '1em', marginLeft: '.6em'}} >
-                      <i className="material-icons">menu</i>
+                  <a 
+                    data-target="slide-out" 
+                    className="sidenav-trigger btn-floating btn-large waves-effect waves-light red" 
+                    style={{marginTop: '1em', marginLeft: '.6em'}} 
+                  >
+                      <i className="material-icons">
+                        menu
+                      </i>
                   </a>
-                  {/* <a data-target="slide-out" className="sidenav-trigger"><i class="material-icons">menu</i></a> */}
-
                   <div className="tab-content-div">
                       { 
                           config.map((con, index) => {

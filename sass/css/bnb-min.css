@@ -1,13 +1,11 @@
 * {box-sizing: border-box}
 
 .tab-content-div {
+    -webkit-flex: 4;
+    flex: 4;
     overflow: scroll;
     border-left: none;
-    padding: 0 1em 0 6em;
-}
-
-.sidenav-trigger {
-  position: fixed;
+    padding: 0px 12px;
 }
 
 .tab-content-div div div {
