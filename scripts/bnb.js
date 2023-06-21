@@ -381,8 +381,8 @@ class Tabs extends React.Component {
       `] : ['', ''];
 
       const general = [
-          'Cualquier duda favor de buscarme por WhatsApp al +1 (915) 258-7922',
-          'For any question please message or whatsapp me to (915) 258-7922'
+          '',
+          ''
       ]
       const continua = [
           'Continuar',
